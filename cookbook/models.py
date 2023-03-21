@@ -15,3 +15,14 @@ class Recipe(models.Model):
 
     def __str__(self):
         return self.title + ' by ' + self.creator.username
+
+
+class Comment(models.Model):
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, null=True, blank=True, related_name='comments')
+    name = models.CharField(max_length=200, null=True, blank=True)
+    body = models.TextField(null=True, blank=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return 'Comment made by ' + self.name + ' on ' + self.recipe.title
