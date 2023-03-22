@@ -13,6 +13,9 @@ class Recipe(models.Model):
     updated = models.DateTimeField(auto_now=True)
     # tags = models.ManyToManyField(Tag, blank=True)
 
+    class Meta:
+        ordering = ['-created']
+
     def __str__(self):
         return self.title + ' by ' + self.creator.username
 
