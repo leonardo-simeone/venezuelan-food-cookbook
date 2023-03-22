@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Mulish:wght@300&display=swap');
+
+body {
+    font-family: 'Mulish', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+#welcome {
+    background: #212529;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 180%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* LINKS */
+
+.nav-item a {
+    transition:0.5s;
+    color: antiquewhite;
+}
+
+.nav-item a:hover {
+    color: #fff;
+}
+
+span#user {
+    color: #fff;
+}
+
+/* CAROUSEL */
+
+.carousel-img {
+    width: 80%;
+    height: 50vh;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width: 25%;
+}
+
+/* CARD */
+
+.card-img-top {
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
+    border-radius: calc(0.25rem - 1px);
+}
+
+.card {
+    margin: 0 auto;
+    margin-bottom: 5px;   
+}
+
+.card-title {
+    color: brown;    
+}
+
+.card-title:hover {
+    color: blue;    
+}
+
+body a {
+    text-decoration: none !important;
+}
+
+/* FOOTER */
+
+.footer-container {
+    margin:0;
+    overflow-x:hidden;
+}
+
+.footer{
+    background:#212529;
+    padding:30px 0px;
+    text-align:center;
+    }
+    
+    .footer .row{
+    width:100%;
+    height: 3vh;
+    margin:1% 0%;
+    padding:0.6% 0%;
+    color:gray;
+    font-size:0.8em;
+    display: block;
+    }
+    
+    .footer .row a{
+    text-decoration:none;
+    color:gray;
+    transition:0.5s;
+    }
+    
+    .footer .row a:hover{
+    color:#fff;
+    }
+    
+    .footer .row ul{
+    width:100%;
+    }
+    
+    .footer .row ul li{
+    display:inline-block;
+    margin:0px 30px;
+    }
+    
+    .footer .row a i{
+    font-size:2em;
+    margin:0% 1%;
+    }
+    
+    @media (max-width:720px){
+    .footer{
+    padding:5% 2% 2% 2%;
+    }
+
+    .footer .row ul{
+        padding: 0;
+    }
+
+    .footer .row ul li{
+    display:block;
+    margin:10px 0px;
+    text-align:center;
+    }
+    .footer .row a i{
+    margin:0% 3%;
+    }
+
+    .footer .row{
+        height: auto;
+    }
+    }
