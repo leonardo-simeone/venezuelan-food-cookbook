@@ -26,13 +26,19 @@ h1 {
 
 /* LINKS */
 
-.nav-item a {
-    transition:0.5s;
-    color: antiquewhite;
+.navbar-dark .navbar-nav .nav-link {
+    transition:0.4s;
+    color: rgba(255,255,255,.5);
 }
 
-.nav-item a:hover {
-    color: #fff;
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: white;
+}
+
+.card-body h2 {
+    margin-top: 8px;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
 }
 
 span#user {
@@ -77,6 +83,76 @@ span#user {
 
 body a {
     text-decoration: none !important;
+}
+
+/* JUMBOTRON */
+
+.jumbotron {
+    background: no-repeat center;
+  }
+
+.jumbotron hr {
+    border-top: 3px solid rgba(0,0,0,.4);
+    width: 40vw;
+  }
+
+.display-4 {
+    font-size: 3rem    
+  }
+
+.jumbo-title {
+    margin-top: 25px
+}
+
+.jumbo-text {
+    text-align: center;
+}
+
+.jumbotron h1, .jumbotron p {
+    color: black
+}
+
+.jumbo-mask {
+    background-color: rgba(255, 255, 255, .7);
+    border-radius: 5px;
+    width: 70%;
+    height: 30vh;
+    margin: 0 auto;
+}
+
+@media screen and (min-width:820px) {
+    .jumbotron {
+        background-size: cover;
+        height: 60vh;
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .display-4 {
+        font-size: 2rem;
+    }
+}
+
+/* CONTENT */
+
+#instructions {
+    text-align: justify;
+}
+
+#comment-background {
+    background-color: rgba(33, 37, 41, .1);
+    border-radius: 5px;
+}
+
+.comment-p {
+    padding: 15px;
+    margin-bottom: 0;
+}
+
+#comment-p2 {
+    padding-top: 0;
 }
 
 /* FOOTER */
