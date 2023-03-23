@@ -4,6 +4,15 @@
 
 {% block content %}
 
+<div id="welcome" class="container">
+  <div class="row">
+      <div class="col">
+          <h1>Delicious Venezuelan Recipes</h1>
+      </div>
+  </div>
+</div>
+<br>
+
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -33,15 +42,6 @@
 
   <br>
   
-<div id="welcome" class="container">
-    <div class="row">
-        <div class="col">
-            <h1>Delicious Venezuelan Recipes</h1>
-        </div>
-    </div>
-</div>  
-
-
 <div class="container">
     <div class="row">
 
@@ -60,7 +60,7 @@
                                 {% endif %}                                
                             </div>
                             <a href="#">
-                                <h2 class="card-title">{{recipe.title}}</h2>
+                                <h2 class="card-title"><a href="{% url 'recipeunit' recipe.id %}">{{recipe.title}}</a></h2>
                             </a>
                                 <p class="card-text">{{recipe.short_description}}</p>
                                 <p class="card-text text-muted">{{recipe.created}}</p>
