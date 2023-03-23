@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<br>
+{% if "default-image" in recipe_object.food_image.url %}
+<div class="jumbotron" style="background-image: url({% static 'images/default-image.jpg' %});">
+    <div class="jumbo-mask">
+        <h1 class="display-4 jumbo-title">{{recipe_object.title}}</h1>
+        <p class="lead jumbo-text">Tags will go here should there be any</p>
+        <hr class="my-4">
+        <p class="jumbo-text">{{recipe_object.short_description}}</p>
+    </div>
+</div>
+{% else %}
+<div class="jumbotron" style="background-image: url('{{ recipe_object.food_image.url }}');">
+    <div class="jumbo-mask">
+        <h1 class="display-4 jumbo-title">{{recipe_object.title}}</h1>
+        <p class="lead jumbo-text">Tags will go here should there be any</p>
+        <hr class="my-4">
+        <p class="jumbo-text">{{recipe_object.short_description}}</p>
+    </div>
+</div>
+{% endif %}
+<hr>
+<br>
+<div class="container">
+    <h2>Instructions for Preparation:</h2>
+    <div class="row">
+        <div class="col">
+            <p id="instructions">{{recipe_object.instructions}}</p>
+        </div>
+    </div>
+    <p>Recipe created by {{recipe_object.creator}}</p>
+    <p>Recipe date of publication: {{recipe_object.created}}</p>
+</div>
+
+<div class="container">
+    <h3>Comments:</h3>
+    <hr>
+    <div class="row">
+        <div class="col-6">
+            {% for comment in comments %}
+            <div id="comment-background">
+                <p class="comment-p">{{comment.body}}</p>
+                <p id="comment-p2" class="comment-p">Comment made by {{comment.name}} on {{comment.created}}</p>
+            </div>
+            <hr>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
