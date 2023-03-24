@@ -25,10 +25,16 @@
 <hr>
 <br>
 <div class="container">
+    <h2>Ingredients:</h2>
+    <div class="row">
+        <div class="col">
+            <p class="instructions">{{recipe_object.ingredients|linebreaksbr}}</p>
+        </div>
+    </div>
     <h2>Instructions for Preparation:</h2>
     <div class="row">
         <div class="col">
-            <p id="instructions">{{recipe_object.instructions}}</p>
+            <p class="instructions">{{recipe_object.instructions}}</p>
         </div>
     </div>
     <p>Recipe created by {{recipe_object.creator}}</p>
