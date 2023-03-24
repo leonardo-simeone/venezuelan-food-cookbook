@@ -4,10 +4,11 @@ from cloudinary.models import CloudinaryField
 
 
 class Recipe(models.Model):
-    creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name='recipe_creator', null=True, blank=True)
-    title = models.CharField(max_length=200, null=True, blank=True, unique=True)
+    creator = models.ForeignKey(User, on_delete=models.CASCADE, default=1, related_name='recipe_creator')
+    title = models.CharField(max_length=200, unique=True)
     short_description = models.CharField(max_length=150, null=True, blank=True)
     ingredients = models.TextField()
+    instructions = models.TextField()
     food_image = CloudinaryField('image', default='default-image')
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -22,8 +23,8 @@ class Recipe(models.Model):
 
 class Comment(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, null=True, blank=True, related_name='comments')
-    name = models.CharField(max_length=200, null=True, blank=True)
-    body = models.TextField(null=True, blank=True)
+    name = models.CharField(max_length=200)
+    body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
