@@ -141,7 +141,7 @@ body a {
 
 /* CONTENT */
 
-#instructions {
+.instructions {
     text-align: justify;
 }
 
@@ -240,18 +240,6 @@ body a {
     font-weight: 400;
 }
 
-.register-form h2 {
-    text-align: center;
-    font-size: 16px;
-    font-weight: 600;
-    text-transform: uppercase;
-    display: inline-block;
-    margin: 40px 8px 10px 8px;
-    color: #cccccc;
-}
-
-
-
 /* STRUCTURE */
 
 .wrapper {    
@@ -260,8 +248,17 @@ body a {
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    min-height: 100%;
+    min-height: 75vh;
     padding: 20px;
+}
+
+.wrapper h2 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 10px;
 }
 
 #formContent {
@@ -341,6 +338,8 @@ input[type=reset]:active {
 }
 
 input[type=text],
+textarea,
+input[type=image],
 input[type=email],
 input[type=password] {
     background-color: #f6f6f6;
@@ -365,6 +364,7 @@ input[type=password] {
 
 input[type=password]:focus,
 input[type=email]:focus,
+textarea:focus,
 input[type=text]:focus {
     background-color: #fff;
     border-bottom: 2px solid #5fbae9;
@@ -525,4 +525,22 @@ input[type=text]:placeholder {
 .errorlist {
     list-style-type: none;
     padding: 0;
+}
+
+#recipeFormContent {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: rgba(33, 37, 41, .3);
+    padding: 30px;
+    width: 90%;
+    position: relative;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 80vw;
+}
+
+input[type=text], textarea, input[type=image], input[type=email], input[type=password] {
+    text-align: justify;
 }
