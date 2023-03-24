@@ -5,6 +5,12 @@ from django.contrib.auth.models import User
 from django import forms
 
 
+class RecipeForm(ModelForm):
+    class Meta:
+        model = Recipe
+        fields = ['title', 'short_description', 'ingredients', 'instructions', 'food_image']
+
+
 class NewUserForm(UserCreationForm):
     class Meta:
         model = User
