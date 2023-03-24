@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import *
-from .forms import NewUserForm
+from .forms import NewUserForm, RecipeForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
@@ -75,3 +75,20 @@ def recipeUnit(request, pk):
     context = {'recipe_object': recipe_object, 'comments': comments}
 
     return render(request, 'recipe.html', context)
+
+# --------------------------------------------------------------------------
+# Create new recipe view
+
+
+def createRecipe(request):
+    form = RecipeForm()
+
+    if request.method == 'POST':
+        Recipe.creator = request.user.username
+        form = RecipeForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('recipes')
+
+    context = {'form': form}
+    return render(request, 'recipe-form.html', context)
