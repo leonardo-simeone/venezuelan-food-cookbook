@@ -24,6 +24,34 @@ def registerView(request):
     return render(request, 'accounts/register.html', context)
 
 # --------------------------------------------------------------------------
+# Login view
+
+
+def loginView(request):
+
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('recipes')
+        else:
+            messages.info(request, 'Username OR password is incorrect')
+
+    context = {}
+    return render(request, 'accounts/login.html', context)
+
+# --------------------------------------------------------------------------
+# Display recipes view
+
+
+def logoutView(request):
+    logout(request)
+    return redirect('recipes')
+
+# --------------------------------------------------------------------------
 # Display recipes view
 
 
