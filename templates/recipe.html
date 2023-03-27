@@ -39,6 +39,16 @@
     </div>
     <p>Recipe created by {{recipe_object.creator}}</p>
     <p>Recipe date of publication: {{recipe_object.created}}</p>
+
+    {% if user.is_authenticated %}
+        {% if user == recipe_object.creator %}
+    <div>
+        <a class="edit-del-buttons" href="{% url 'update-recipe' recipe_object.id %}"><button type="button" class="btn btn-info">Edit Recipe</button></a>
+        <a href="#"><button type="button" class="btn btn-danger">Delete Recipe</button></a>
+    </div><br>
+        {% endif %}
+    {% endif %}
+
 </div>
 
 <div class="container">
