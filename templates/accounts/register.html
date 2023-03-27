@@ -12,17 +12,17 @@
       <form class="register-form" method="POST" action="">
         {% csrf_token %}
 
-        <input type="text" id="form.username" class="fadeIn second" name="username" placeholder="Username" required>
-        <input type="email" id="form.email" class="fadeIn third" name="email" placeholder="Email" required>
+        <input type="text" id="form.username" class="fadeIn first" name="username" placeholder="Username" required>
+        <input type="email" id="form.email" class="fadeIn second" name="email" placeholder="Email" required>
         <input type="password" id="form.password1" class="fadeIn third" name="password1" placeholder="Password">
-        <input type="password" id="form.password2" class="fadeIn third" name="password2" placeholder="Please confirm password">
-        <input type="submit" class="fadeIn fourth" value="Register">
+        <input type="password" id="form.password2" class="fadeIn fourth" name="password2" placeholder="Please confirm password">
+        <input type="submit" class="fadeIn fifth" value="Register">
 
       </form>
       <div id="form-error">{{form.errors}}</div>
   
       <div id="formFooter">
-        <a class="underlineHover" href="{% url 'login' %}">Already Registered?</a>
+        <a class="underlineHover fadeIn sixth" href="{% url 'login' %}">Already Registered?</a>
       </div>
   
     </div>
