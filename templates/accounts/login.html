@@ -23,14 +23,14 @@
       <form class="register-form" method="POST" action="">
         {% csrf_token %}
 
-        <input type="text" class="fadeIn second" name="username" placeholder="Username">
-        <input type="password" class="fadeIn third" name="password" placeholder="Password">
-        <input type="submit" class="fadeIn fourth" value="Login">
+        <input type="text" class="fadeIn first" name="username" placeholder="Username">
+        <input type="password" class="fadeIn second" name="password" placeholder="Password">
+        <input type="submit" class="fadeIn third" value="Login">
 
       </form>
   
       <div id="formFooter">
-        <a class="underlineHover" href="{% url 'register' %}">Not Registered Yet?</a>
+        <a class="underlineHover fadeIn fourth" href="{% url 'register' %}">Not Registered Yet?</a>
       </div>
   
     </div>
