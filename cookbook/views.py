@@ -84,9 +84,9 @@ def createRecipe(request):
     form = RecipeForm()
 
     if request.method == 'POST':
-        Recipe.creator = request.user.username
         form = RecipeForm(request.POST, request.FILES)
         if form.is_valid():
+            form.instance.creator = request.user
             form.save()
             return redirect('recipes')
 
