@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import *
-from .forms import NewUserForm, RecipeForm
+from .forms import NewUserForm, RecipeForm, CommentForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
@@ -71,8 +71,20 @@ def recipeUnit(request, pk):
 
     recipe_object = Recipe.objects.get(id=pk)
     comments = recipe_object.comments.all()
+    comment_form = CommentForm()
 
-    context = {'recipe_object': recipe_object, 'comments': comments}
+    context = {'recipe_object': recipe_object, 'comments': comments, 'comment_form': comment_form}
+
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment_form.instance.name = request.user.username
+            comment = comment_form.save(commit=False)
+            comment.recipe = recipe_object
+            comment.save()
+            return redirect(recipeUnit, pk)
+    else:
+        comment_form = CommentForm()
 
     return render(request, 'recipe.html', context)
 
