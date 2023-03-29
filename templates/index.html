@@ -6,7 +6,7 @@
 
 {% for message in messages %}
 
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
+<div class="alert alert-warning alert-dismissible fade show" id="msg" role="alert">
   {{message}}
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
@@ -16,7 +16,7 @@
 {% endfor %}
 
 <div id="welcome" class="container">
-  <div class="row">
+  <div id="main-heading" class="row">
       <div class="col">
           <h1>Delicious Venezuelan Recipes</h1>
       </div>
@@ -88,5 +88,13 @@
         </div>
     </div>    
 </div>
+<script>
+  setTimeout(function () {
+      let messages = document.getElementById("msg");
+      let alert = new bootstrap.Alert(messages);
+      alert.close();
+
+  }, 3000);
+</script>
 
 {% endblock %}
