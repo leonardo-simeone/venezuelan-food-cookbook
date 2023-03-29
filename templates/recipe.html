@@ -44,7 +44,7 @@
         {% if user == recipe_object.creator %}
     <div>
         <a class="edit-del-buttons" href="{% url 'update-recipe' recipe_object.id %}"><button type="button" class="btn btn-info">Edit Recipe</button></a>
-        <a href="#"><button type="button" class="btn btn-danger">Delete Recipe</button></a>
+        <a href="{% url 'delete-recipe' recipe_object.id %}"><button type="button" class="btn btn-danger">Delete Recipe</button></a>
     </div><br>
         {% endif %}
     {% endif %}
