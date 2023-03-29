@@ -26,6 +26,10 @@ h1 {
     padding: 10px;
 }
 
+#main-heading{
+    margin-top: 15px;
+}
+
 /* LINKS */
 
 .navbar-dark .navbar-nav .nav-link {
@@ -230,7 +234,7 @@ body a {
     }
 }
 
-/* Register form */
+/* REGISTER FORM */
 
 
 .register-form a {
@@ -558,6 +562,10 @@ input[type=text], textarea, input[type=image], input[type=email], input[type=pas
     text-align: justify;
 }
 
+input[type=submit] {
+    cursor: pointer;
+}
+
 label p {
     margin-top: 6px;
     margin-bottom: 0;
@@ -572,10 +580,69 @@ label p {
     padding-left: 10px !important;
 }
 
+/* CREATE AND UPDATE FORMS */
+
 .create-recipe {
     margin-top: 15px !important;
 }
 
+#update-recipe p label {
+    display: block;
+    text-transform: uppercase;
+}
+
+#update-recipe p a {
+    color: blue;
+}
+
+#update-recipe #id_food_image{
+    width: 50vw;
+}
+
+/* MESSAGES */
+
+.alert-warning {
+    text-align: center;
+    width: 80%;
+    margin: 5px auto 18px;
+}
+
+/* EDIT DELETE BUTTONS */
+
 .edit-del-buttons {
     padding: 5px;
+}
+
+/* DELETE FORM */
+
+#delete-recipe-wrapper{
+    background-color: #cccccc;
+}
+
+#delete-recipe {
+    color: #212529;
+}
+
+#delete-recipe-form {
+    text-align: center;
+}
+
+/* COMMENT FORM */
+
+.comment-section {
+    margin-left: 15px !important;
+}
+
+#comment-form {
+    background-color: darkgray;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+textarea.comment-section {
+    margin-top: 15px !important;
+}
+
+input.comment-section {
+    margin-bottom: 15px !important;
 }
