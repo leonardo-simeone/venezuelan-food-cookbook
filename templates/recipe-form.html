@@ -10,8 +10,8 @@
     <form class="register-form" method="POST" action="" enctype="multipart/form-data">
       {% csrf_token %}
 
-      <input type="text" id="form.title" class="fadeIn first recipe-form" name="title" placeholder="Recipe Title">
-      <input type="text" id="form.short_description" class="fadeIn second recipe-form" name="short_description"
+      <input type="text" name="title" id="form.title" class="fadeIn first recipe-form" placeholder="Recipe Title">
+      <input type="text" name="short_description" id="form.short_description" class="fadeIn second recipe-form"
         placeholder="Recipe Short Description">
       <textarea name="ingredients" id="form.ingredients" class="fadeIn third recipe-form" rows="6" placeholder="Recipe Ingredients"></textarea>
       <textarea name="instructions" id="form.instructions" class="fadeIn fourth recipe-form" rows="8" placeholder="Cooking Instructions"></textarea>
