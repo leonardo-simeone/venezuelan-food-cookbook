@@ -64,6 +64,16 @@
             <hr>
             {% endfor %}
         </div>
+        {% if user.is_authenticated %}
+        <div class="col-6">
+            <form action="" method="POST" id="comment-form" class="register-form">
+                {% csrf_token %}
+                <!-- <p class="comment-section">Make a Comment:</p> -->
+                <textarea name="body" id="form.body" class="recipe-form comment-section" rows="6" placeholder="Leave your comment here"></textarea>
+                <input class="comment-section" type="submit" value="Comment">
+            </form>
+        </div>
+        {% endif %}
     </div>
 </div>
 
