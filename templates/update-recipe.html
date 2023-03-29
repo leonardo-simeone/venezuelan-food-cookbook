@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="wrapper fadeInDown">
+  <div class="new-recipe" id="recipeFormContent">
+    <!-- Tab Titles -->
+    <h2> Update Recipe </h2>
+    <form class="register-form" id="update-recipe" method="POST" action="" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      {{form.as_p}}
+      
+      <input type="submit" class="fadeIn sixth create-recipe" value="Update Recipe">
+    </form>
+    <div id="form-error">{{form.errors}}</div>
+  </div>
+</div>
+
+
+
+</form>
+
+
+</div>
+</div>
+
+{% endblock %}
