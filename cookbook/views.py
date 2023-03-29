@@ -92,3 +92,35 @@ def createRecipe(request):
 
     context = {'form': form}
     return render(request, 'recipe-form.html', context)
+
+# --------------------------------------------------------------------------
+# Update recipe view
+
+
+def updateRecipe(request, pk):
+    recipe_object = Recipe.objects.get(id=pk)
+    form = RecipeForm(instance=recipe_object)
+
+    if request.method == 'POST':
+        form = RecipeForm(request.POST, request.FILES, instance=recipe_object)
+        if form.is_valid():
+            form.save()
+            return redirect(recipeUnit, pk)
+
+    context = {'form': form}
+    return render(request, 'update-recipe.html', context)
+
+# --------------------------------------------------------------------------
+# Delete recipe view
+
+
+def deleteRecipe(request, pk):
+    recipe = Recipe.objects.get(id=pk)
+    if request.method == 'POST':
+        recipe.delete()
+        return redirect('recipes')
+
+    return render(request, 'delete.html', {'recipe': recipe})
+
+# --------------------------------------------------------------------------
+
