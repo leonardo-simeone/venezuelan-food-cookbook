@@ -1,9 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from multiselectfield import MultiSelectField
 
 
 class Recipe(models.Model):
+
+    RECIPE_TAGS = (('Breakfast', 'Breakfast'), ('Lunch', 'Lunch'), ('Dinner', 'Dinner'), ('Supper', 'Supper'), ('Dessert', 'Dessert'), ('Drink', 'Drink'),)
+
     creator = models.ForeignKey(User, on_delete=models.CASCADE, default=1, related_name='recipe_creator')
     title = models.CharField(max_length=200, unique=True)
     short_description = models.CharField(max_length=150, null=True, blank=True)
@@ -12,7 +16,7 @@ class Recipe(models.Model):
     food_image = CloudinaryField('image', default='default-image')
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    # tags = models.ManyToManyField(Tag, blank=True)
+    tags = MultiSelectField(max_length=120, choices=RECIPE_TAGS, default='', null=True, blank=True)
 
     class Meta:
         ordering = ['-created']
