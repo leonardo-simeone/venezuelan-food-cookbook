@@ -3,6 +3,18 @@
 
 {% block content %}
 <br>
+
+{% for message in messages %}
+
+<div class="alert alert-warning alert-dismissible fade show" id="msg" role="alert">
+    {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+{% endfor %}
+
 {% if "default-image" in recipe_object.food_image.url %}
 <div class="jumbotron" style="background-image: url({% static 'images/default-image.jpg' %});">
     <div class="jumbo-mask">
@@ -16,7 +28,11 @@
 <div class="jumbotron" style="background-image: url('{{ recipe_object.food_image.url }}');">
     <div class="jumbo-mask">
         <h1 class="display-4 jumbo-title">{{recipe_object.title}}</h1>
-        <p class="lead jumbo-text">Tags will go here should there be any</p>
+        <p class="lead jumbo-text">{% for tag in tags %}
+            <span>                
+                {{tag}}
+            </span>
+        {% endfor %}</p>
         <hr class="my-4">
         <p class="jumbo-text">{{recipe_object.short_description}}</p>
     </div>
@@ -37,16 +53,27 @@
             <p class="instructions">{{recipe_object.instructions}}</p>
         </div>
     </div>
+    <div>
+        {% for tag in tags %}
+            <span>
+                <button type="button" class="btn btn-info">
+                {{tag}}
+                </button>
+            </span>
+        {% endfor %}
+    </div> <br>
     <p>Recipe created by {{recipe_object.creator}}</p>
     <p>Recipe date of publication: {{recipe_object.created}}</p>
 
     {% if user.is_authenticated %}
-        {% if user == recipe_object.creator %}
+    {% if user == recipe_object.creator %}
     <div>
-        <a class="edit-del-buttons" href="{% url 'update-recipe' recipe_object.id %}"><button type="button" class="btn btn-info">Edit Recipe</button></a>
-        <a href="{% url 'delete-recipe' recipe_object.id %}"><button type="button" class="btn btn-danger">Delete Recipe</button></a>
+        <a class="edit-del-buttons" href="{% url 'update-recipe' recipe_object.id %}"><button type="button"
+                class="btn btn-info">Edit Recipe</button></a>
+        <a href="{% url 'delete-recipe' recipe_object.id %}"><button type="button" class="btn btn-danger">Delete
+                Recipe</button></a>
     </div><br>
-        {% endif %}
+    {% endif %}
     {% endif %}
 
 </div>
@@ -69,7 +96,8 @@
             <form action="" method="POST" id="comment-form" class="register-form">
                 {% csrf_token %}
                 <!-- <p class="comment-section">Make a Comment:</p> -->
-                <textarea name="body" id="form.body" class="recipe-form comment-section" rows="6" placeholder="Leave your comment here"></textarea>
+                <textarea name="body" id="form.body" class="recipe-form comment-section" rows="6"
+                    placeholder="Leave your comment here"></textarea>
                 <input class="comment-section" type="submit" value="Comment">
             </form>
         </div>
