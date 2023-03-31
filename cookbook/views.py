@@ -70,10 +70,11 @@ def recipes(request):
 def recipeUnit(request, pk):
 
     recipe_object = Recipe.objects.get(id=pk)
+    tags = recipe_object.tags
     comments = recipe_object.comments.all()
     comment_form = CommentForm()
 
-    context = {'recipe_object': recipe_object, 'comments': comments, 'comment_form': comment_form}
+    context = {'recipe_object': recipe_object, 'tags': tags, 'comments': comments, 'comment_form': comment_form}
 
     if request.method == 'POST':
         comment_form = CommentForm(request.POST)
