@@ -9,7 +9,7 @@
 <form action="" method="POST" id="delete-recipe-form" class="register-form" enctype="multipart/form-data">
     {% csrf_token %}
     <p>Are you sure you want to delete "{{recipe}}"?</p>
-    <a href="{% url 'recipes' %}">Go back</a>
+    <a href="{% url 'recipeunit' recipe.id %}">Go back</a>
     <input type="submit" value="Delete">
 </form>
 </div>
