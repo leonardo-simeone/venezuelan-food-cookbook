@@ -36,6 +36,7 @@ def loginView(request):
 
         if user is not None:
             login(request, user)
+            messages.success(request, 'Welcome back ' + user.username)
             return redirect('recipes')
         else:
             messages.info(request, 'Username OR password is incorrect')
@@ -49,6 +50,7 @@ def loginView(request):
 
 def logoutView(request):
     logout(request)
+    messages.success(request, 'You have been successfully logged out')
     return redirect('recipes')
 
 # --------------------------------------------------------------------------
@@ -101,6 +103,7 @@ def createRecipe(request):
         if form.is_valid():
             form.instance.creator = request.user
             form.save()
+            messages.success(request, 'You have successfully created ' + form.instance.title)
             return redirect('recipes')
 
     context = {'form': form}
@@ -118,6 +121,7 @@ def updateRecipe(request, pk):
         form = RecipeForm(request.POST, request.FILES, instance=recipe_object)
         if form.is_valid():
             form.save()
+            messages.success(request, 'You have successfully updated ' + form.instance.title)
             return redirect(recipeUnit, pk)
 
     context = {'form': form}
@@ -131,9 +135,9 @@ def deleteRecipe(request, pk):
     recipe = Recipe.objects.get(id=pk)
     if request.method == 'POST':
         recipe.delete()
+        messages.success(request, 'You have successfully deleted ' + recipe.title)
         return redirect('recipes')
 
     return render(request, 'delete.html', {'recipe': recipe})
 
 # --------------------------------------------------------------------------
-
