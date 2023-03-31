@@ -646,3 +646,22 @@ textarea.comment-section {
 input.comment-section {
     margin-bottom: 15px !important;
 }
+
+ul#id_tags {
+    list-style: none;
+    text-align: left;
+    width: 70vw;
+    margin: 0 auto;
+}
+
+#tags-p {
+    width: 68vw;
+    margin: 0 auto;
+    text-align: left;
+}
+
+label.fifth {
+    width: 68vw;
+    margin: 0 auto;
+    text-align: left;
+}
