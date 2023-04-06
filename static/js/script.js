@@ -1,39 +1,47 @@
 var title = document.getElementById('id_title');
 
-title.className += ' fadeIn first';
+title.classList.add('fadeIn', 'first');
 // -------------------------------------------------------------------
 var shortDescription = document.getElementById('id_short_description');
 
-shortDescription.className += ' fadeIn second';
+shortDescription.classList.add('fadeIn', 'second');
 // -------------------------------------------------------------------
 var ingredients = document.getElementById('id_ingredients');
 
-ingredients.className += ' fadeIn third';
+ingredients.classList.add('fadeIn', 'third');
 // -------------------------------------------------------------------
 var instructions = document.getElementById('id_instructions');
 
-instructions.className += ' fadeIn fourth';
+instructions.classList.add('fadeIn', 'fourth');
+// -------------------------------------------------------------------
+var foodTags = document.getElementById('id_tags');
+
+foodTags.classList.add('fadeIn', 'fifth');
 // -------------------------------------------------------------------
 var foodImage = document.getElementById('id_food_image');
 
-foodImage.className += ' fadeIn fifth';
+foodImage.classList.add('fadeIn', 'sixth');
 // -------------------------------------------------------------------
 var labelOne = document.getElementsByTagName('label')[0];
 
-labelOne.className += ' fadeIn first';
+labelOne.classList.add('fadeIn', 'first');
 // -------------------------------------------------------------------
 var labelTwo = document.getElementsByTagName('label')[1];
 
-labelTwo.className += ' fadeIn second';
+labelTwo.classList.add('fadeIn', 'second');
 // -------------------------------------------------------------------
 var labelThird = document.getElementsByTagName('label')[2];
 
-labelThird.className += ' fadeIn third';
+labelThird.classList.add('fadeIn', 'third');
 // -------------------------------------------------------------------
 var labelFourth = document.getElementsByTagName('label')[3];
 
-labelFourth.className += ' fadeIn fourth';
+labelFourth.classList.add('fadeIn', 'fourth');
 // -------------------------------------------------------------------
 var labelFifth = document.getElementsByTagName('label')[4];
 
-labelFifth.className += ' fadeIn fifth';
+labelFifth.classList.add('fadeIn', 'fifth');
+// -------------------------------------------------------------------
+var labelSixth = document.getElementsByTagName('label')[5];
+
+labelSixth.classList.add('fadeIn', 'sixth');
