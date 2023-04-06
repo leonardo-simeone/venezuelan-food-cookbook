@@ -6,7 +6,7 @@
 
 {% for message in messages %}
 
-<div class="alert alert-warning alert-dismissible fade show" id="msg" role="alert">
+<div class="alert alert-success alert-dismissible fade show" id="msg" role="alert">
   {{message}}
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
@@ -15,14 +15,14 @@
                 
 {% endfor %}
 
-<div id="welcome" class="container">
-  <div id="main-heading" class="row">
+<div id="welcome" class="container d-md-none d-sm">
+  <div class="row">
       <div class="col">
-          <h1>Delicious Venezuelan Recipes</h1>
+          <h1>Venezuelan Recipes Cookbook</h1>
       </div>
   </div>
 </div>
-<br>
+
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -69,7 +69,14 @@
     </a>
   </div>
 
-  <br>
+
+  <div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 id="second-title">Our Recipes</h2>
+        </div>
+    </div>
+  </div>
   
 <div class="container">
     <div class="row">
@@ -77,7 +84,7 @@
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for recipe in recipes_list %}
-                <div class="col-md-4">
+                <div class="col-md-4 recipe-card-padding">
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
@@ -88,9 +95,9 @@
                                 <img class="card-img-top" src=" {{ recipe.food_image.url }} " alt="">
                                 {% endif %}                                
                             </div>
-                            <a href="#">
-                                <h2 class="card-title"><a href="{% url 'recipeunit' recipe.id %}">{{recipe.title}}</a></h2>
-                            </a>
+                            
+                                <h2 class="card-title"><a id="title-color" href="{% url 'recipeunit' recipe.id %}">{{recipe.title}}</a></h2>
+                            
                                 <p class="card-text">{{recipe.short_description}}</p>
                                 <p class="card-text text-muted">{{recipe.created}}</p>
                                                         
