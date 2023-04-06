@@ -2,45 +2,59 @@
 {% load static %}
 
 {% block content %}
-<br>
 
 {% for message in messages %}
-
 <div class="alert alert-warning alert-dismissible fade show" id="msg" role="alert">
     {{message}}
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
-
 {% endfor %}
 
-{% if "default-image" in recipe_object.food_image.url %}
-<div class="jumbotron" style="background-image: url({% static 'images/default-image.jpg' %});">
-    <div class="jumbo-mask">
-        <h1 class="display-4 jumbo-title">{{recipe_object.title}}</h1>
-        <p class="lead jumbo-text">Tags will go here should there be any</p>
-        <hr class="my-4">
-        <p class="jumbo-text">{{recipe_object.short_description}}</p>
+<div id="recipe-unit-card" class="card bg-dark text-white d-md-none d-sm" style="max-width: 900px;">
+    {% if "default-image" in recipe_object.food_image.url %}
+    <img src="{% static 'images/default-image.jpg' %}" class="card-img" alt="Stony Beach" />
+    {% else %}
+    <img src="{{ recipe_object.food_image.url }}" class="card-img" alt="Stony Beach" />
+    {% endif %}
+    <div class="card-img-overlay">
+        <h5 class="card-title">{{recipe_object.title}}</h5>
+        <p class="card-text">
+            {{recipe_object.short_description}}
+        </p>
+        {% if tags %}
+                {% for tag in tags %}
+                <span class="card-text">{{tag}}</span>
+                {% endfor %}
+                {% endif %}
     </div>
 </div>
-{% else %}
-<div class="jumbotron" style="background-image: url('{{ recipe_object.food_image.url }}');">
-    <div class="jumbo-mask">
-        <h1 class="display-4 jumbo-title">{{recipe_object.title}}</h1>
-        <p class="lead jumbo-text">{% for tag in tags %}
-            <span>                
-                {{tag}}
-            </span>
-        {% endfor %}</p>
-        <hr class="my-4">
-        <p class="jumbo-text">{{recipe_object.short_description}}</p>
+
+<div class="container-fluid d-none d-md-block">
+    <div id="card-row" class="row">
+        <div class="card-col col-6">
+            {% if "default-image" in recipe_object.food_image.url %}
+            <img src="{% static 'images/default-image.jpg' %}" id="card-img-fluid" class="img-fluid large-image" alt="...">
+            {% else %}
+            <img src="{{ recipe_object.food_image.url }}" id="card-img-fluid" class="img-fluid large-image" alt="...">
+            {% endif %}
+        </div>
+        <div id="large-card" class="col-6">
+                <h5>{{recipe_object.title}}</h5>
+                <hr>
+                <h6>{{recipe_object.short_description}}</h6>
+                {% if tags %}
+                <hr>
+                {% for tag in tags %}
+                <span>{{tag}}</span>
+                {% endfor %}
+                {% endif %}
+        </div>
     </div>
 </div>
-{% endif %}
-<hr>
-<br>
-<div class="container">
+
+<div class="container-fluid">
     <h2>Ingredients:</h2>
     <div class="row">
         <div class="col">
@@ -55,11 +69,11 @@
     </div>
     <div>
         {% for tag in tags %}
-            <span>
-                <button type="button" class="btn btn-info">
+        <span>
+            <button type="button" class="btn btn-info">
                 {{tag}}
-                </button>
-            </span>
+            </button>
+        </span>
         {% endfor %}
     </div> <br>
     <p>Recipe created by {{recipe_object.creator}}</p>
@@ -78,7 +92,7 @@
 
 </div>
 
-<div class="container">
+<div class="container-fluid">
     <h3>Comments:</h3>
     <hr>
     <div class="row">
