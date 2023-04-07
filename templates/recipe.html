@@ -14,9 +14,9 @@
 
 <div id="recipe-unit-card" class="card bg-dark text-white d-md-none d-sm" style="max-width: 900px;">
     {% if "default-image" in recipe_object.food_image.url %}
-    <img src="{% static 'images/default-image.jpg' %}" class="card-img" alt="Stony Beach" />
+    <img src="{% static 'images/default-image.jpg' %}" class="card-img" alt="Default Image" />
     {% else %}
-    <img src="{{ recipe_object.food_image.url }}" class="card-img" alt="Stony Beach" />
+    <img src="{{ recipe_object.food_image.url }}" class="card-img" alt="Recipe Image" />
     {% endif %}
     <div class="card-img-overlay">
         <h5 class="card-title">{{recipe_object.title}}</h5>
@@ -24,10 +24,10 @@
             {{recipe_object.short_description}}
         </p>
         {% if tags %}
-                {% for tag in tags %}
-                <span class="card-text">{{tag}}</span>
-                {% endfor %}
-                {% endif %}
+        {% for tag in tags %}
+        <span class="card-text">{{tag}}</span>
+        {% endfor %}
+        {% endif %}
     </div>
 </div>
 
@@ -35,78 +35,80 @@
     <div id="card-row" class="row">
         <div class="card-col col-6">
             {% if "default-image" in recipe_object.food_image.url %}
-            <img src="{% static 'images/default-image.jpg' %}" id="card-img-fluid" class="img-fluid large-image" alt="...">
+            <img src="{% static 'images/default-image.jpg' %}" id="card-img-fluid" class="img-fluid large-image"
+                alt="...">
             {% else %}
             <img src="{{ recipe_object.food_image.url }}" id="card-img-fluid" class="img-fluid large-image" alt="...">
             {% endif %}
         </div>
         <div id="large-card" class="col-6">
-                <h5>{{recipe_object.title}}</h5>
-                <hr>
-                <h6>{{recipe_object.short_description}}</h6>
-                {% if tags %}
-                <hr>
-                {% for tag in tags %}
-                <span>{{tag}}</span>
-                {% endfor %}
-                {% endif %}
+            <h5>{{recipe_object.title}}</h5>
+            <hr>
+            <h6>{{recipe_object.short_description}}</h6>
+            {% if tags %}
+            <hr>
+            {% for tag in tags %}
+            <span>{{tag}}</span>
+            {% endfor %}
+            {% endif %}
         </div>
     </div>
 </div>
+<br>
+<hr id="recipe-unit-hr">
+<div id="recipe-content-wrapper" class="container-fluid">
 
-<div class="container-fluid">
-    <h2>Ingredients:</h2>
-    <div class="row">
-        <div class="col">
+    <div class="row recipe-text-row">
+        <div class="col-lg-5 recipe-text">
+            <h2 class="recipe-page-headings">Ingredients:</h2>
             <p class="instructions">{{recipe_object.ingredients|linebreaksbr}}</p>
         </div>
-    </div>
-    <h2>Instructions for Preparation:</h2>
-    <div class="row">
-        <div class="col">
+        <div id="recipe-inst" class="col-lg-5 recipe-text">
+            <h2 class="recipe-page-headings">Instructions for Preparation:</h2>
             <p class="instructions">{{recipe_object.instructions}}</p>
         </div>
     </div>
-    <div>
-        {% for tag in tags %}
-        <span>
-            <button type="button" class="btn btn-info">
-                {{tag}}
-            </button>
-        </span>
-        {% endfor %}
-    </div> <br>
-    <p>Recipe created by {{recipe_object.creator}}</p>
-    <p>Recipe date of publication: {{recipe_object.created}}</p>
 
-    {% if user.is_authenticated %}
-    {% if user == recipe_object.creator %}
-    <div>
-        <a class="edit-del-buttons" href="{% url 'update-recipe' recipe_object.id %}"><button type="button"
-                class="btn btn-info">Edit Recipe</button></a>
-        <a href="{% url 'delete-recipe' recipe_object.id %}"><button type="button" class="btn btn-danger">Delete
-                Recipe</button></a>
-    </div><br>
-    {% endif %}
-    {% endif %}
-
-</div>
-
-<div class="container-fluid">
-    <h3>Comments:</h3>
-    <hr>
-    <div class="row">
-        <div class="col-6">
-            {% for comment in comments %}
-            <div id="comment-background">
-                <p class="comment-p">{{comment.body}}</p>
-                <p id="comment-p2" class="comment-p">Comment made by {{comment.name}} on {{comment.created}}</p>
-            </div>
-            <hr>
+    <br>
+    
+    
+    <div id="info-tags-div">
+        {% if tags %}
+        <h3 class="recipe-page-headings">This recipe is recommended for:</h3>
+        <div>
+            {% for tag in tags %}
+            <span>
+                <button type="button" class="btn btn-info">
+                    {{tag}}
+                </button>
+            </span>
             {% endfor %}
         </div>
+        {% endif %}
+    
+         <br>
+
+        <p><strong>Recipe created by {{recipe_object.creator}}</strong></p>
+        <p><em>Recipe date of publication: {{recipe_object.created}}</em></p>
+
         {% if user.is_authenticated %}
-        <div class="col-6">
+        {% if user == recipe_object.creator %}
+        <div>
+            <a class="edit-del-buttons" href="{% url 'update-recipe' recipe_object.id %}"><button type="button"
+                    class="btn btn-info">Edit Recipe</button></a>
+            <a href="{% url 'delete-recipe' recipe_object.id %}"><button type="button" class="btn btn-danger">Delete
+                    Recipe</button></a>
+        </div><br>
+        {% endif %}
+        {% endif %}
+    </div>
+
+    <hr>
+
+    <div class="row recipe-text-row">
+
+        {% if user.is_authenticated %}
+        <div class="col-lg-5">
             <form action="" method="POST" id="comment-form" class="register-form">
                 {% csrf_token %}
                 <!-- <p class="comment-section">Make a Comment:</p> -->
@@ -116,6 +118,22 @@
             </form>
         </div>
         {% endif %}
+
+        <div class="col-lg-5">
+            <h3 class="recipe-page-headings" id="comment-heading">Comments:</h3>
+            {% if comments %}
+            {% for comment in comments %}
+            <div id="comment-background">
+                <p class="comment-p">{{comment.body}}</p>
+                <p id="comment-p2" class="comment-p">Comment made by {{comment.name}} on {{comment.created}}</p>
+            </div>
+            <hr>
+            {% endfor %}
+
+            {% else %}
+            <h4 class="recipe-page-headings">Be the first one to comment on this recipe!</h4>
+            {% endif %}
+        </div>
     </div>
 </div>
 
