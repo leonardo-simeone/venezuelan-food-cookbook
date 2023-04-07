@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Mulish:wght@300&display=swap');
 
-/* BODY AND TITLES */
+/* BODY, TITLES, BACK TO TOP BUTTON AND NAVBAR */
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: 'Mulish', sans-serif;
@@ -14,6 +18,26 @@ h3 {
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
+
+.recipe-page-headings {
+    font-size: 1.5rem;
+}
+
+#btn-back-to-top {
+    position: fixed;
+    bottom: 55px;
+    right: 20px;
+    display: none;
+    background-color: rgba(175, 168, 186, .8); /* Dust Palette color #AFA8BA in rgba of Main Color #0000FF */
+    border: 1px solid rgba(30, 25, 38, .2); /* Highlight Palette color #1E1926 in rgba of Main Color #0000FF */
+    color: #1E1926;
+    z-index: 1;
+  }
+
+  #btn-back-to-top:hover {
+    background-color: #9B1700; /* Threedom color #9B1700 of Main Color #0000FF */
+    color: #FDF7FF;
+  }
 
 .bg-dark {
     background-color: #1E1926!important;
@@ -32,10 +56,9 @@ h1 {
     padding: 10px;
 }
 
-#second-title {
+#second-heading {
     color: #1E1926;
     text-align: center;
-    background-color: rgba(30, 25, 38, .4);
     width: 30vw;
     margin: 20px auto 5px;
     border-radius: 5px;
@@ -51,7 +74,7 @@ a {
 
 .navbar-dark .navbar-nav .nav-link {
     transition: 0.4s;
-    color: rgba(175, 168, 186, .8); /* Dust Palette color #AFA8BA in rgba of Main Color #0000FF */
+    color: rgba(175, 168, 186, .8); 
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
@@ -108,11 +131,11 @@ span#user {
 .card {
     margin: 0 auto;
     margin-bottom: 5px;
-    border: 1px solid rgba(30, 25, 38, .2); /* Highlight Palette color #1E1926 in rgba of Main Color #0000FF */
+    border: 1px solid rgba(30, 25, 38, .2);
 }
 
 #title-color {
-    color: #9B1700; /* Threedom color #9B1700 of Main Color #0000FF */
+    color: #9B1700;
 }
 
 #title-color:hover {
@@ -156,7 +179,8 @@ body a {
 
 #card-row {
     align-items: center;
-    background-color: #F9EAFF; /* Spot Palette color #F9EAFF of Main Color #0000FF */
+    
+    background-color: rgba(46, 134, 158, .6); /* Small Switch Palette color #2E869E in rgba of Main Color #0000FF */
     color: #1E1926;
 }
 
@@ -184,8 +208,32 @@ body a {
 
 /* CONTENT */
 
+#recipe-content-wrapper {
+    padding: 25px;
+}
+
 .instructions {
     text-align: justify;
+}
+
+.recipe-text {
+    background-color: rgba(30, 25, 38, .1);
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.recipe-text-row {
+    justify-content: space-evenly;
+}
+
+#recipe-unit-hr {
+    border-top: 3px solid rgba(30, 25, 38, .4);
+    width: 70vw;
+}
+
+#info-tags-div {
+    width: 90%;
+    margin: 0 auto;
 }
 
 #comment-background {
@@ -673,7 +721,7 @@ label p {
 }
 
 #comment-form {
-    background-color: #AFA8BA;
+    background-color: rgba(46, 134, 158, .6);
     border-radius: 5px;
     margin-bottom: 15px;
 }
@@ -729,7 +777,7 @@ label.fifth {
 
 /* MEDIA QUERIES */
 
-/* Index Page */
+/* INDEX PAGE */
 
 @media (max-width:991px) {
     /* Carousel */
@@ -746,8 +794,8 @@ label.fifth {
     .carousel-img {
         height: 30vh;
     }
-    /* Second title */
-    #second-title {
+    /* Second heading */
+    #second-heading {
         font-size: 1.5rem;
         width: 50vw;
         margin: 15px auto 0;
@@ -790,7 +838,7 @@ label.fifth {
         font-size: 1.2rem;
     }
     /* Second title */
-    #second-title {
+    #second-heading {
         font-size: 1rem;
         width: 60vw;
     }
@@ -817,10 +865,10 @@ label.fifth {
     }
 }
 
-/* Recipe Page */
+/* RECIPE PAGE */
 
 @media (max-width:1400px) {
-    /* CARD */
+    /* Card */
     #large-card h5 {
         font-size: 3rem;
     }
@@ -836,7 +884,7 @@ label.fifth {
 }
 
 @media (max-width:1200px) {
-    /* CARD */
+    /* Card */
     #large-card h5 {
         font-size: 2.5rem;
     }
@@ -852,7 +900,7 @@ label.fifth {
 }
 
 @media (max-width:992px) {
-    /* CARD */
+    /* Card */
     #large-card h5 {
         font-size: 2rem;
     }
@@ -864,5 +912,39 @@ label.fifth {
     #large-card span {
         font-size: 0.8rem;
     }
-    
+
+    #comment-heading {
+        padding: 5px;
+    }
+
+    /* Instructions */
+    #recipe-inst {
+        margin-top: 15px;
+    }
+    /* Info-Tags-Div */
+    #info-tags-div {
+        width: 100%;
+    }
+
+}
+
+@media (max-width:700px) {
+    /* Recipe Headings */
+    .recipe-page-headings {
+        font-size: 1.1rem;
+    }
+    /* Recipe paragraphs */
+    #recipe-content-wrapper p {
+        font-size: .9rem;
+    }
+    /* Recipe buttons */
+    #recipe-content-wrapper button {
+        font-size: .8rem;
+        padding: 3px;
+        margin-bottom: 3px;
+    }
+    /* Recipe textarea */
+    #recipe-content-wrapper textarea {
+        font-size: .9rem;
+    }
 }
