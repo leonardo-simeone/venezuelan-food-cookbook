@@ -4,7 +4,7 @@
 {% block content %}
 
 {% for message in messages %}
-<div class="alert alert-warning alert-dismissible fade show" id="msg" role="alert">
+<div class="alert alert-success alert-dismissible fade show" id="msg" role="alert">
     {{message}}
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
@@ -20,12 +20,9 @@
     {% endif %}
     <div class="card-img-overlay">
         <h5 class="card-title">{{recipe_object.title}}</h5>
-        <p class="card-text">
-            {{recipe_object.short_description}}
-        </p>
         {% if tags %}
         {% for tag in tags %}
-        <span class="card-text">{{tag}}</span>
+        <span id="small-tag" class="card-text">{{tag}}</span>
         {% endfor %}
         {% endif %}
     </div>
@@ -48,7 +45,7 @@
             {% if tags %}
             <hr>
             {% for tag in tags %}
-            <span>{{tag}}</span>
+            <span id="big-tag">{{tag}}</span>
             {% endfor %}
             {% endif %}
         </div>
@@ -78,7 +75,7 @@
         <div>
             {% for tag in tags %}
             <span>
-                <button type="button" class="btn btn-info">
+                <button type="button" id="tag-button" class="btn btn-info">
                     {{tag}}
                 </button>
             </span>
@@ -94,9 +91,9 @@
         {% if user.is_authenticated %}
         {% if user == recipe_object.creator %}
         <div>
-            <a class="edit-del-buttons" href="{% url 'update-recipe' recipe_object.id %}"><button type="button"
+            <a id="edit-button" href="{% url 'update-recipe' recipe_object.id %}"><button type="button"
                     class="btn btn-info">Edit Recipe</button></a>
-            <a href="{% url 'delete-recipe' recipe_object.id %}"><button type="button" class="btn btn-danger">Delete
+            <a id="del-button" href="{% url 'delete-recipe' recipe_object.id %}"><button type="button" class="btn btn-danger">Delete
                     Recipe</button></a>
         </div><br>
         {% endif %}
@@ -111,7 +108,6 @@
         <div class="col-lg-5">
             <form action="" method="POST" id="comment-form" class="register-form">
                 {% csrf_token %}
-                <!-- <p class="comment-section">Make a Comment:</p> -->
                 <textarea name="body" id="form.body" class="recipe-form comment-section" rows="6"
                     placeholder="Leave your comment here"></textarea>
                 <input class="comment-section" type="submit" value="Comment">
