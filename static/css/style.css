@@ -801,8 +801,28 @@ label p {
 
 /* EDIT DELETE BUTTONS */
 
-.edit-del-buttons {
-    padding: 5px;
+#edit-button button {
+    background-color: #9B1700;
+    border-color: rgba(30, 25, 38, .8);
+    color: #FDF7FF;
+}
+
+#edit-button button:hover {
+    background-color: rgba(30, 25, 38, .4);
+    border-color: rgba(30, 25, 38, .8);
+    color: #1E1926;
+}
+
+#del-button button {
+    background-color: #9B1700;
+    border-color: rgba(30, 25, 38, .8);
+    color: #FDF7FF;
+}
+
+#del-button button:hover {
+    background-color: rgba(30, 25, 38, .4);
+    border-color: rgba(30, 25, 38, .8);
+    color: #1E1926;
 }
 
 /* DELETE FORM */
