@@ -141,3 +141,21 @@ def deleteRecipe(request, pk):
     return render(request, 'delete.html', {'recipe': recipe})
 
 # --------------------------------------------------------------------------
+# About Us view
+
+
+def aboutUs(request):
+
+    return render(request, 'about-us.html')
+
+# --------------------------------------------------------------------------
+# Gallery view
+
+
+def gallery(request):
+
+    recipes_list = Recipe.objects.all()
+
+    context = {'recipes_list': recipes_list}
+
+    return render(request, 'gallery.html', context)
