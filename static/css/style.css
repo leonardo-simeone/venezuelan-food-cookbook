@@ -1073,3 +1073,53 @@ label.fifth {
         font-size: .9rem;
     }
 }
+
+/* FORMS */
+
+@media (max-width:767px) {
+    input[type=text],
+    input[type=email],
+    input[type=password],
+    textarea,
+    input[type=image],
+    input[type=file] {
+        font-size: .8rem;
+        padding-left: 10px;
+    }
+
+    #update-recipe ul, #update-recipe label {
+        font-size: .8rem;
+    }
+
+    #recipeFormContent h2 {
+        font-size: 20px;
+    }
+
+    #recipeFormContent p {
+        font-size: .8rem;
+    }
+
+    #image-file {
+        width: 90% !important;
+    }
+
+    input[type=file] {
+        padding-left: 8px !important;
+        padding-right: 0 !important;
+    }
+
+    input[type=submit] {
+        margin: 15px auto 15px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+
+/* ABOUT US */
+
+@media (max-width:767px) {
+    .about-us p {
+        font-size: 1rem;
+    }
+}
+
