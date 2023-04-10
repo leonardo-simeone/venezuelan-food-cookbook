@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div id="welcome" class="container d-md-none d-sm">
+    <div class="row">
+        <div class="col">
+            <h1>Venezuelan Recipes Cookbook</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 id="second-heading">Gallery</h2>
+        </div>
+    </div>
+</div>
+
+<div class="gallery-wrapper">
+
+    <ul class="grid">
+        {% for recipe in recipes_list %}
+        <li>
+            <a href="{% url 'recipeunit' recipe.id %}">
+                <figure class="grid__figure">
+                    {% if "default-image" in recipe.food_image.url %}
+                    <img src="{% static 'images/default-image.jpg' %}" alt="{{recipe.title}}">
+                    {% else %}
+                    <img src=" {{ recipe.food_image.url }} " alt="{{recipe.title}}">
+                    {% endif %}
+                    <figcaption>{{recipe.title}}</figcaption>
+                </figure>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+{% endblock %}
