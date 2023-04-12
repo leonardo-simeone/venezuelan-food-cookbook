@@ -10,9 +10,9 @@ class Recipe(models.Model):
     RECIPE_TAGS = (('Breakfast', 'Breakfast'), ('Lunch', 'Lunch'), ('Dinner', 'Dinner'), ('Supper', 'Supper'), ('Dessert', 'Dessert'), ('Drink', 'Drink'),)
 
     creator = models.ForeignKey(User, on_delete=models.CASCADE, default=1, related_name='recipe_creator')
-    title = models.CharField(max_length=25, unique=True)
-    short_description = models.CharField(max_length=100, null=True, blank=True)
-    ingredients = models.TextField()
+    title = models.CharField(max_length=25, unique=True, null=False, blank=False)
+    short_description = models.CharField(max_length=100, null=False, blank=False)
+    ingredients = models.TextField(null=False, blank=False)
     instructions = HTMLField(null=False, blank=False)
     food_image = CloudinaryField('image', default='default-image')
     created = models.DateTimeField(auto_now_add=True)
