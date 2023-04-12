@@ -18,9 +18,13 @@ class Recipe(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     tags = MultiSelectField(max_length=120, choices=RECIPE_TAGS, default='', null=True, blank=True)
+    likes = models.ManyToManyField(User, related_name='recipe_likes')
 
     class Meta:
         ordering = ['-created']
+    
+    def total_likes(self):
+        return self.likes.count()
 
     def __str__(self):
         return self.title + ' by ' + self.creator.username
