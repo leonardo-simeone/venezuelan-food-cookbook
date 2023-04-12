@@ -909,10 +909,24 @@ label p {
 
 #delete-recipe {
     color: #1E1926;
+    padding: 30px;
 }
 
 #delete-recipe-form {
     text-align: center;
+}
+
+#delete-recipe-form p {
+    font-size: 3rem;
+}
+
+#go-back {
+    color: #9B1700;
+    margin-right: 10px;
+}
+
+#go-back:hover {
+    color: #FDF7FF;
 }
 
 /* COMMENT FORM */
@@ -1200,6 +1214,13 @@ label.fifth {
 @media (max-width:767px) {
     .about-us p {
         font-size: 1rem;
+    }
+}
+
+/* DELETE PAGE */
+@media (max-width:480px) {
+    #delete-recipe-form p {
+        font-size: 2rem;
     }
 }
 
