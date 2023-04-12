@@ -113,13 +113,45 @@
         </div>
     </div>    
 </div>
-<script>
-  setTimeout(function () {
-      let messages = document.getElementById("msg");
-      let alert = new bootstrap.Alert(messages);
-      alert.close();
 
-  }, 3000);
-</script>
+
+{% if recipes_list.has_other_pages %}
+<div>
+  <ul class="pagination justify-content-center">
+    {% if recipes_list.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ recipes_list.previous_page_number }}" aria-label="Previous">
+          <span class="arrows" aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+          <span class="page-link arrows" aria-hidden="true">&laquo;</span>
+      </li>
+    {% endif %}
+
+    {% for p in recipes_list.paginator.page_range %}
+      {% if recipes_list.number == p %}
+        <li class="page-item"><a id="page-act" class="page-link" href="#">{{ p }}</a></li>
+      {% else %}
+        <li class="page-item"><a id="page-inact" class="page-link" href="?page={{ p }}">{{ p }}</a></li>
+      {% endif %}
+    {% endfor %}
+
+    {% if recipes_list.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ recipes_list.next_page_number }}" aria-label="Next">
+          <span class="arrows" aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+        <span class="page-link arrows" aria-hidden="true">&raquo;</span>
+      </li>
+    {% endif %}
+</ul>
+</div>
+{% endif %}
+</div>
 
 {% endblock %}
