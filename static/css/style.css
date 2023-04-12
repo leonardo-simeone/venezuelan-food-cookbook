@@ -206,6 +206,22 @@ body a {
     color: #FDF7FF;
 }
 
+/* PAGINATION */
+
+#page-act {
+    color: #9B1700;
+    font-weight: bold;
+    text-decoration: underline !important;
+}
+
+#page-inact {
+    color: #2E869E;
+}
+
+.arrows {
+    color: #1E1926;
+}
+
 /* CONTENT */
 
 #recipe-content-wrapper {
