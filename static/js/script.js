@@ -23,8 +23,18 @@ function backToTop() {
   document.documentElement.scrollTop = 0;
 }
 
+// When a message shows, it will automatically disappear after three seconds
+
+setTimeout(function () {
+  let messages = document.getElementById("msg");
+  let alert = new bootstrap.Alert(messages);
+  alert.close();
+
+}, 3000);
 
 
+// When the update-recipe form is loaded, the fadeIn and transicion delays classes are added to the form elements
+// -------------------------------------------------------------------
 var title = document.getElementById('id_title');
 
 title.classList.add('fadeIn', 'first');
