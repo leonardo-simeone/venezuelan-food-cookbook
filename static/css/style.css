@@ -232,6 +232,10 @@ body a {
     text-align: justify;
 }
 
+#ingredients-area {
+    text-align: left !important;
+}
+
 .recipe-text {
     background-color: rgba(30, 25, 38, .1);
     border-radius: 10px;
@@ -282,6 +286,41 @@ span#tag-button {
 
 #comment-p2 {
     padding-top: 0;
+}
+
+/* LIKE BUTTON */
+
+#like-div {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.btn-primary {
+    color: #9B1700;
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 1.5rem !important;
+}
+
+.btn-primary:hover {
+    color: #9B1700;
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+.btn-danger.focus, .btn-danger:focus {
+    box-shadow: none !important;
+}
+
+.btn.focus, .btn:focus {
+    box-shadow: none !important;
+}
+
+#liked-button {
+    color: #9B1700;
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 1.5rem !important;
 }
 
 /* ABOUT US */
@@ -1085,6 +1124,10 @@ label.fifth {
     }
     /* Info-Tags-Div */
     #info-tags-div {
+        width: 100%;
+    }
+    /* Likes-Div */
+    #like-div {
         width: 100%;
     }
 
