@@ -1,5 +1,6 @@
 from django.forms import ModelForm
 from .models import Recipe, Comment
+from tinymce.widgets import TinyMCE
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
@@ -24,6 +25,9 @@ class RecipeForm(ModelForm):
     class Meta:
         model = Recipe
         fields = ['title', 'short_description', 'ingredients', 'instructions', 'tags', 'food_image']
+        widgets = {
+            'instructions': TinyMCE(),
+        }
 
 
 class NewUserForm(UserCreationForm):
