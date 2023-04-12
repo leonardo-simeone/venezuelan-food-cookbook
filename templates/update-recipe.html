@@ -1,16 +1,52 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block head %}
+    <!-- TinyMCE Widget -->
+    {{ form.media }}
+{% endblock %}
 
 {% block content %}
 
 <div class="wrapper fadeInDown">
   <div class="new-recipe" id="recipeFormContent">
-    <!-- Tab Titles -->
+    <!-- Form Title -->
     <h2> Update Recipe </h2>
     <form class="register-form" id="update-recipe" method="POST" action="" enctype="multipart/form-data">
       {% csrf_token %}
+      <p>{{ form.media }}</p>
+      <p>
+        <label for="id_title" class="fadeIn first">{{ form.title.label }}</label>
+        {{ form.title }}
+      </p>
+      <p>
+        <label for="id_short_description" class="fadeIn second">{{ form.short_description.label }}</label>
+        {{ form.short_description }}
+      </p>
+      <p>
+        <label for="id_ingredients" class="fadeIn third">{{ form.ingredients.label }}</label>
+        {{ form.ingredients }}
+      </p>
+      <div id="inst-label" class="fadeIn fourth">
+        <label for="id_instructions" class="fadeIn fourth">{{ form.instructions.label }}</label>
+        {{ form.instructions }}
+      </div>
+      <p id="tags-p" class="fadeIn fourth">Tags:</p><br>
+      <div id="tags-div" class="fadeIn fifth">
 
-      {{form.as_p}}
+        {{form.tags}}
+
+      </div>
+
+      <div class="fadeIn fifth">
+        <label for="form.food_image">
+          Select Image <br>
+          <p><i class="fa fa-2x fa-camera"></i></p>
+        </label>
+      </div>
+      <div id="image-file" class="fadeIn fifth">
+        <input name="food_image" id="form.food_image" class="recipe-form" type="file">
+      </div>
+
       
       <input type="submit" class="fadeIn sixth create-recipe" value="Update Recipe">
     </form>
