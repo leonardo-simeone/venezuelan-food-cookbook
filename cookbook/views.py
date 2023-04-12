@@ -4,6 +4,7 @@ from .forms import NewUserForm, RecipeForm, CommentForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # --------------------------------------------------------------------------
 # Register View
@@ -45,7 +46,7 @@ def loginView(request):
     return render(request, 'accounts/login.html', context)
 
 # --------------------------------------------------------------------------
-# Display recipes view
+# Logout view
 
 
 def logoutView(request):
@@ -60,6 +61,15 @@ def logoutView(request):
 def recipes(request):
 
     recipes_list = Recipe.objects.all()
+    page = request.GET.get('page', 1)
+    paginator = Paginator(recipes_list, 3)
+
+    try:
+        recipes_list = paginator.page(page)
+    except PageNotAnInteger:
+        recipes_list = paginator.page(1)
+    except EmptyPage:
+        recipes_list = paginator.page(paginator.num_pages)
 
     context = {'recipes_list': recipes_list}
 
