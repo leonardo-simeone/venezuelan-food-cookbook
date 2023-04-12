@@ -85,8 +85,13 @@ def recipeUnit(request, pk):
     tags = recipe_object.tags
     comments = recipe_object.comments.all()
     comment_form = CommentForm()
+    total_likes = recipe_object.total_likes()
+    liked = False
 
-    context = {'recipe_object': recipe_object, 'tags': tags, 'comments': comments, 'comment_form': comment_form}
+    if recipe_object.likes.filter(id=request.user.id).exists():
+        liked = True
+
+    context = {'recipe_object': recipe_object, 'tags': tags, 'comments': comments, 'comment_form': comment_form, 'total_likes': total_likes, 'liked': liked}
 
     if request.method == 'POST':
         comment_form = CommentForm(request.POST)
