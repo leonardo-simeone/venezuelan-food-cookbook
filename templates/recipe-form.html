@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block head %}
+    <!-- TinyMCE Widget -->
+    {{ form.media }}
+{% endblock %}
 
 {% block content %}
 
 
 <div class="wrapper fadeInDown">
   <div class="new-recipe" id="recipeFormContent">
-    <!-- Tab Titles -->
+    <!-- Form Title -->
     <h2> Create Recipe </h2>
     <form class="register-form" id="update-recipe" method="POST" action="" enctype="multipart/form-data">
 
@@ -17,8 +21,10 @@
         placeholder="Recipe Short Description">
       <textarea name="ingredients" id="form.ingredients" class="fadeIn third recipe-form" rows="6"
         placeholder="Recipe Ingredients"></textarea>
-      <textarea name="instructions" id="form.instructions" class="fadeIn fourth recipe-form" rows="8"
-        placeholder="Cooking Instructions"></textarea>
+        <div class="fadeIn fourth">
+        {{ form.media }}
+        {{form.instructions}}
+      </div>
       <p id="tags-p" class="fadeIn fourth">Tags:</p><br>
       <div id="tags-div" class="fadeIn fifth">
 
