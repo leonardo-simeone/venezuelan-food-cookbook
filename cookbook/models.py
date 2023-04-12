@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from tinymce.models import HTMLField
 from cloudinary.models import CloudinaryField
 from multiselectfield import MultiSelectField
 
@@ -12,7 +13,7 @@ class Recipe(models.Model):
     title = models.CharField(max_length=25, unique=True)
     short_description = models.CharField(max_length=100, null=True, blank=True)
     ingredients = models.TextField()
-    instructions = models.TextField()
+    instructions = HTMLField(null=False, blank=False)
     food_image = CloudinaryField('image', default='default-image')
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
