@@ -571,6 +571,14 @@ input[type=text]:placeholder {
     color: #AFA8BA;
 }
 
+.tox-tinymce {
+    height: 374px !important;
+    width: 68vw !important;
+    margin: 0 auto !important;
+    border-radius: 10px !important;
+    margin-bottom: 15px !important;
+}
+
 
 
 /* ANIMATIONS */
@@ -783,6 +791,10 @@ label p {
     text-transform: uppercase;
 }
 
+#inst-label {
+    text-transform: uppercase;
+} 
+
 #update-recipe p a {
     color: #0000FF; /* Main Color #0000FF */
 }
@@ -791,12 +803,21 @@ label p {
     width: 50vw;
 }
 
+#id_instructions_ifr {
+    background-color: #FDF7FF;
+}
+
+
 /* MESSAGES */
 
 .alert-success {
     text-align: center;
     width: 80%;
     margin: 30px auto 0 auto;
+}
+
+#msg {
+    margin-bottom: 25px;
 }
 
 /* EDIT DELETE BUTTONS */
