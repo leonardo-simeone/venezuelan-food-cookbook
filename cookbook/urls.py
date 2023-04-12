@@ -12,4 +12,5 @@ urlpatterns = [
     path('delete-recipe/<str:pk>/', views.deleteRecipe, name='delete-recipe'),
     path('about-us/', views.aboutUs, name='about-us'),
     path('gallery/', views.gallery, name='gallery'),
+    path('like-recipe/<str:pk>/', views.likeRecipe, name='like-recipe'),
 ]
