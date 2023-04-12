@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from .forms import NewUserForm, RecipeForm, CommentForm
 from django.contrib.auth.forms import UserCreationForm
@@ -169,3 +169,20 @@ def gallery(request):
     context = {'recipes_list': recipes_list}
 
     return render(request, 'gallery.html', context)
+
+# --------------------------------------------------------------------------
+# Like view
+
+
+def likeRecipe(request, pk):
+    recipe_object = get_object_or_404(Recipe, id=request.POST.get('recipe_id'))
+    liked = False
+
+    if recipe_object.likes.filter(id=request.user.id).exists():
+        recipe_object.likes.remove(request.user)
+        liked = False
+    else:
+        recipe_object.likes.add(request.user)
+        liked = True
+
+    return redirect(recipeUnit, pk)
