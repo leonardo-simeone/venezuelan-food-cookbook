@@ -58,11 +58,11 @@
     <div class="row recipe-text-row">
         <div class="col-lg-5 recipe-text">
             <h2 class="recipe-page-headings">Ingredients:</h2>
-            <p class="instructions">{{recipe_object.ingredients|linebreaksbr}}</p>
+            <p id="ingredients-area">{{recipe_object.ingredients|linebreaksbr}}</p>
         </div>
         <div id="recipe-inst" class="col-lg-5 recipe-text">
             <h2 class="recipe-page-headings">Instructions for Preparation:</h2>
-            <p class="instructions">{{recipe_object.instructions}}</p>
+            <p class="instructions">{{recipe_object.instructions|safe}}</p>
         </div>
     </div>
 
@@ -82,8 +82,8 @@
             {% endfor %}
         </div>
         {% endif %}
-    
-         <br>
+
+        <br>
 
         <p><strong>Recipe created by {{recipe_object.creator}}</strong></p>
         <p><em>Recipe date of publication: {{recipe_object.created}}</em></p>
@@ -93,7 +93,8 @@
         <div>
             <a id="edit-button" href="{% url 'update-recipe' recipe_object.id %}"><button type="button"
                     class="btn btn-info">Edit Recipe</button></a>
-            <a id="del-button" href="{% url 'delete-recipe' recipe_object.id %}"><button type="button" class="btn btn-danger">Delete
+            <a id="del-button" href="{% url 'delete-recipe' recipe_object.id %}"><button type="button"
+                    class="btn btn-danger">Delete
                     Recipe</button></a>
         </div><br>
         {% endif %}
