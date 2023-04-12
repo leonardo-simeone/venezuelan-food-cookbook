@@ -67,8 +67,32 @@
     </div>
 
     <br>
-    
-    
+    <div id="like-div">
+        <form action="{% url 'like-recipe' recipe_object.pk %}" method="POST">
+            {% csrf_token %}
+
+            {% if user.is_authenticated %}
+            {% if liked %}
+            <button type="submit" name="recipe_id" value="{{ recipe_object.id }}" id="liked-button" class="btn btn-danger btn-sm">
+                <i class="fa-solid fa-heart"></i>
+            </button>
+
+            {% else %}
+            <button type="submit" name="recipe_id" value="{{ recipe_object.id }}" class="btn btn-primary btn-sm">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+            {% endif %}
+            {% else %}
+            <p>Login to like</p>
+            {% endif %}
+            - {{ total_likes }} Likes
+
+        </form>
+    </div>
+
+    <br>
+    <hr>
+    <br>
     <div id="info-tags-div">
         {% if tags %}
         <h3 class="recipe-page-headings">This recipe is recommended for:</h3>
