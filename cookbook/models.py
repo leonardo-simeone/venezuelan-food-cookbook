@@ -13,7 +13,7 @@ class Recipe(models.Model):
     title = models.CharField(max_length=25, unique=True, null=False, blank=False)
     short_description = models.CharField(max_length=100, null=False, blank=False)
     ingredients = models.TextField(null=False, blank=False)
-    instructions = HTMLField(null=False, blank=False)
+    instructions = models.TextField(null=False, blank=False)
     food_image = CloudinaryField('image', default='default-image')
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
