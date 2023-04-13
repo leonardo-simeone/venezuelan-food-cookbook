@@ -13,7 +13,6 @@
     <h2> Update Recipe </h2>
     <form class="register-form" id="update-recipe" method="POST" action="" enctype="multipart/form-data">
       {% csrf_token %}
-      <p>{{ form.media }}</p>
       <p>
         <label for="id_title" class="fadeIn first">{{ form.title.label }}</label>
         {{ form.title }}
