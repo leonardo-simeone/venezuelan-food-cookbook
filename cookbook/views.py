@@ -19,6 +19,11 @@ def registerView(request):
             form.save()
             user = form.cleaned_data.get('username')
             messages.success(request, 'Account was created for ' + user)
+            new_user = authenticate(
+                username=form.cleaned_data.get('username'),
+                password=form.cleaned_data.get('password1'),
+            )
+            login(request, new_user)
             return redirect('recipes')
 
     context = {'form': form}
