@@ -25,9 +25,6 @@ class RecipeForm(ModelForm):
     class Meta:
         model = Recipe
         fields = ['title', 'short_description', 'ingredients', 'instructions', 'tags', 'food_image']
-        widgets = {
-            'instructions': TinyMCE(),
-        }
 
 
 class NewUserForm(UserCreationForm):
