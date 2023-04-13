@@ -491,6 +491,14 @@ span#tag-button {
     font-weight: 400;
 }
 
+#form-error {
+    color: #FDF7FF !important;
+    background-color: #9B1700 !important;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
 /* STRUCTURE */
 
 .wrapper {    
