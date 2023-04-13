@@ -61,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'venezuelan_food.urls'
@@ -142,11 +143,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-TINYMCE_JS_URL = os.path.join(STATIC_URL, '/static/tinymce/tinymce.min.js')
-TINYMCE_JS_ROOT = os.path.join(STATIC_ROOT, '/static/tinymce/')
-
-TINYMCE_COMPRESSOR = False
 
 
 # Default primary key field type
