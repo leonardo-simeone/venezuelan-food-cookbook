@@ -642,6 +642,10 @@ input[type=text]:placeholder {
     margin-bottom: 15px !important;
 }
 
+.tox-notification {
+    display: none !important;
+}
+
 
 
 /* ANIMATIONS */
