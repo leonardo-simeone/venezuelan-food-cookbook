@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'multiselectfield',
+    'tinymce',
     'cookbook',
 ]
 
@@ -146,3 +147,14 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# TinyMCE WYSIWYG - https://www.tiny.cloud/docs/plugins/opensource
+
+TINYMCE_DEFAULT_CONFIG = {
+    "plugins": "quickbars lists advlist autolink link preview searchreplace table paste wordcount",
+    "toolbar": "undo redo | styleselect forecolor backcolor | copy paste | bold italic underline removeformat | numlist bullist | link",
+    "quickbars_insert_toolbar": "false",
+    "quickbars_image_toolbar": "false",
+    "quickbars_selection_toolbar": "bold italic underline | forecolor backcolor | quicklink blockquote",
+    "placeholder": "Instructions",
+}
