@@ -18,7 +18,7 @@ class Recipe(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     tags = MultiSelectField(max_length=120, choices=RECIPE_TAGS, default='', null=True, blank=True)
-    likes = models.ManyToManyField(User, related_name='recipe_likes')
+    likes = models.ManyToManyField(User, related_name='recipe_likes', blank=True)
 
     class Meta:
         ordering = ['-created']
