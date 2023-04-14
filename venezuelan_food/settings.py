@@ -152,6 +152,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # TinyMCE WYSIWYG - https://www.tiny.cloud/docs/plugins/opensource
 
+TINYMCE_JS_URL = "https://cdn.tiny.cloud/1/f4opj8t8stwqo9wye8a7znldjw4jkzytsafyzdtp7fh4203m/tinymce/6/tinymce.min.js"
+TINYMCE_COMPRESSOR = False
+
 TINYMCE_DEFAULT_CONFIG = {
     "height": 360,
     "width": 900,
