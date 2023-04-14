@@ -153,10 +153,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # TinyMCE WYSIWYG - https://www.tiny.cloud/docs/plugins/opensource
 
 TINYMCE_DEFAULT_CONFIG = {
+    "height": 360,
+    "width": 900,
     "plugins": "quickbars lists advlist autolink link preview searchreplace table paste wordcount",
     "toolbar": "undo redo | styleselect forecolor backcolor | copy paste | bold italic underline removeformat | numlist bullist | link",
     "quickbars_insert_toolbar": "false",
     "quickbars_image_toolbar": "false",
     "quickbars_selection_toolbar": "bold italic underline | forecolor backcolor | quicklink blockquote",
-    "placeholder": "Instructions",
 }
