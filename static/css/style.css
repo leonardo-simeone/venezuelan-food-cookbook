@@ -1006,6 +1006,13 @@ label.fifth {
 
 /* INDEX PAGE */
 
+@media (min-width:1024px) {
+    /* Pagination */
+    .pagination {
+        font-size: 1.25rem !important;
+    }
+}
+
 @media (max-width:991px) {
     /* Carousel */
     .info h5 {
