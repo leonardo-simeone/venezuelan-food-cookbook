@@ -11,6 +11,15 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def registerView(request):
+
+    """
+    The registerView function takes request as an argument
+    and instantiates a form by calling NewUserForm.
+    It then runs the logic to create a new user and log it
+    in if there is a POST request, otherwise it loads an empty
+    NewUserForm.
+    """
+
     form = NewUserForm()
 
     if request.method == 'POST':
@@ -35,6 +44,15 @@ def registerView(request):
 
 def loginView(request):
 
+    """
+    The loginView function takes request as an argument.
+    If there is a POST request it sets username and password,
+    it then runs the logic to authenticate and login a user
+    by using the authenticate and login methods,
+    if the information submitted is incorrect, a message will be
+    shown indicating so, otherwise it loads an empty login form.
+    """
+
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -55,6 +73,14 @@ def loginView(request):
 
 
 def logoutView(request):
+
+    """
+    The logoutView function takes request as an argument.
+    Then the logout method is called to log out the user,
+    a message is shown to indicate the user it has been logged out
+    and the user is redirected home.
+    """
+
     logout(request)
     messages.success(request, 'You have been successfully logged out')
     return redirect('recipes')
@@ -64,6 +90,14 @@ def logoutView(request):
 
 
 def recipes(request):
+
+    """
+    The recipes function takes request as an argument.
+    Then recipes_list is defined equal to all the
+    recipe objects, and the index page is rendered with
+    recipes_list as its context, if there are more than
+    three objects then paginator is used.
+    """
 
     recipes_list = Recipe.objects.all()
     page = request.GET.get('page', 1)
@@ -85,6 +119,22 @@ def recipes(request):
 
 
 def recipeUnit(request, pk):
+
+    """
+    The recipeUnit function takes request and
+    primary key as arguments. It then defines the
+    recipe_object by calling the get method, it
+    also defines tags, comments and total_likes
+    using the recipe_object and comment_form
+    using CommentForm and liked is set to false
+    by default. The context is created and passed
+    to the recipe template to be rendered.
+    If a comment is made via POST request,
+    the logic sets the name equal to username,
+    saves the comment, displays a message to
+    indicate the user that comment was successfully
+    added and redirects the user to recipeUnit.
+    """
 
     recipe_object = Recipe.objects.get(id=pk)
     tags = recipe_object.tags
@@ -117,6 +167,16 @@ def recipeUnit(request, pk):
 
 
 def createRecipe(request):
+
+    """
+    The createRecipe function takes request as an argument
+    and instantiates a form by calling RecipeForm.
+    If there is a POST request it runs the logic to create
+    a new recipe object, show a message to the user to confirm
+    recipe creation and redirect user home, otherwise it loads an empty
+    RecipeForm.
+    """
+
     form = RecipeForm()
 
     if request.method == 'POST':
@@ -135,6 +195,18 @@ def createRecipe(request):
 
 
 def updateRecipe(request, pk):
+
+    """
+    The updateRecipe function takes request and
+    primary key as arguments. It defines recipe_object by calling the get
+    method, it instantiates a form by calling RecipeForm and passing the
+    recipe_object as its instance to prefill the form.
+    If there is a POST request it runs the logic to save
+    the changes made to recipe_object, show a message to the user to confirm
+    recipe update and redirect user to recipeUnit, otherwise
+    it loads a prefilled RecipeForm.
+    """
+
     recipe_object = Recipe.objects.get(id=pk)
     form = RecipeForm(instance=recipe_object)
 
@@ -153,6 +225,16 @@ def updateRecipe(request, pk):
 
 
 def deleteRecipe(request, pk):
+
+    """
+    The deleteRecipe function takes request and
+    primary key as arguments. It defines recipe by calling the get
+    method. If there is a POST request it runs the logic to delete
+    recipe, show a message to the user to confirm
+    recipe deletion and redirect user home, otherwise
+    it loads the delete template with recipe as its context.
+    """
+
     recipe = Recipe.objects.get(id=pk)
     if request.method == 'POST':
         recipe.delete()
@@ -167,6 +249,11 @@ def deleteRecipe(request, pk):
 
 def aboutUs(request):
 
+    """
+    The aboutUs function takes request as an argument
+    and it renders the about-us template.
+    """
+
     return render(request, 'about-us.html')
 
 # --------------------------------------------------------------------------
@@ -175,6 +262,13 @@ def aboutUs(request):
 
 def gallery(request):
 
+    """
+    The gallery function takes request as an argument.
+    Then recipes_list is defined equal to all the
+    recipe objects and gallery template is rendered
+    with recipes_list as its context.
+    """
+    
     recipes_list = Recipe.objects.all()
 
     context = {'recipes_list': recipes_list}
@@ -186,6 +280,21 @@ def gallery(request):
 
 
 def likeRecipe(request, pk):
+
+    """
+    The likeRecipe function takes request and
+    primary key as arguments. It defines recipe_object by calling the
+    get_object_or_404 method and sets liked to False as default.
+    If there is a POST request and a 'like' associated to that recipe
+    and that user exists, then it will remove the like from the recipe
+    and change the liked to False, but if there is a POST request
+    and a 'like' associated to that recipe and that user does not exists,
+    then it will add the like to the recipe and change the liked to True,
+    a message will be shown to the user in both cases to indicate that
+    they have liked or unliked the recipe, and they will be redirected
+    to recipeUnit.
+    """
+
     recipe_object = get_object_or_404(Recipe, id=request.POST.get('recipe_id'))
     liked = False
 
