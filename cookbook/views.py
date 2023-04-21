@@ -105,6 +105,7 @@ def recipeUnit(request, pk):
             comment = comment_form.save(commit=False)
             comment.recipe = recipe_object
             comment.save()
+            messages.success(request, 'Your comment has been successfully added')
             return redirect(recipeUnit, pk)
     else:
         comment_form = CommentForm()
@@ -191,8 +192,10 @@ def likeRecipe(request, pk):
     if recipe_object.likes.filter(id=request.user.id).exists():
         recipe_object.likes.remove(request.user)
         liked = False
+        messages.success(request, 'You have UNLIKED ' + recipe_object.title)
     else:
         recipe_object.likes.add(request.user)
         liked = True
+        messages.success(request, 'You have LIKED ' + recipe_object.title)
 
     return redirect(recipeUnit, pk)
