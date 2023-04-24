@@ -451,7 +451,6 @@ span#tag-button {
     grid-auto-flow: column; 
     grid-auto-columns: 90%; 
     grid-gap: 1em;
-    overflow-x: scroll; 
     -webkit-overflow-scrolling: touch;
     padding: 2em 1em;
     background: #FDF7FF;
@@ -1238,7 +1237,16 @@ label.fifth {
     }
 }
 
+/* GALLERY */
+
+@media (max-width:599px) {
+    .grid {
+        overflow-x: scroll
+    }
+}
+
 /* DELETE PAGE */
+
 @media (max-width:480px) {
     #delete-recipe-form p {
         font-size: 2rem;
