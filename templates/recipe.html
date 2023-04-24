@@ -33,9 +33,9 @@
         <div class="card-col col-6">
             {% if "default-image" in recipe_object.food_image.url %}
             <img src="{% static 'images/default-image.jpg' %}" id="card-img-fluid" class="img-fluid large-image"
-                alt="...">
+                alt="Default Image: Venezuelan flag waving in the wind">
             {% else %}
-            <img src="{{ recipe_object.food_image.url }}" id="card-img-fluid" class="img-fluid large-image" alt="...">
+            <img src="{{ recipe_object.food_image.url }}" id="card-img-fluid" class="img-fluid large-image" alt="{{recipe_object.title}}">
             {% endif %}
         </div>
         <div id="large-card" class="col-6">
