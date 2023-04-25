@@ -128,6 +128,62 @@ To wireframe the website I used [Whimsical](https://whimsical.com/wireframes).
     - The last field is the image field, where the user could if they wanted to, upload an image for their recipe. Since the image is optional, should the user decide not to use one, then a default image will be assigned by the site.
 
 ![Create Recipe](documentation/create-recipe.png)
+
+- **Edit/Update Recipe**
+
+    - The update recipe page contains the form necessary to edit/update a recipe previously created, only users that are authenticated and are the recipe owner can access this page.
+    - The fields in this form will be prefilled with the existing data for the recipe, allowing the user to edit from the point where they left off the recipe.
+    - The fields will be the exact same ones as the ones in the create recipe form.
+    - The intructions field will also have a WYSIWYG text editor (TinyMCE).
+
+![Update Recipe](documentation/update-recipe.png)
+
+- **Delete Recipe**
+
+    - The delete recipe page contains the form/button necessary to delete a recipe previously created, only users that are authenticated and are the recipe owner can access this page.
+    - The page shows the user a warning paragraph asking 'are you sure you want to delete recipe' (recipe includes title and creator), which prompts the user that they are about to delete their recipe.
+    - After the warning question there are two buttons, one to offer the user the option to go back to the recipe and one to delete the recipe.
+
+![Delete Recipe](documentation/delete-recipe.png)
+
+- **Footer**
+
+    - The footer the same as the navbar, is identical across the site.
+    - The footer contains several links. Links to social media such as Facebook, Instagram, YouTube and Twitter which open in a different tab. It also contains links to Privacy Policy and Terms & Conditions which are both modals.
+    - At the end of the footer there is the name of the site and the programmer's credits.
+
+![Footer](documentation/footer.png)
+
+- **Messages**
+
+    - Every time the user completes an action whether it be register, login, logout, comment on a recipe, like a recipe, create a recipe, update a recipe or delete a recipe, a relevant message will be displayed at the top of the screen to inform the user about the action being completed successfully.
+    - Messages will only stay on screen for three seconds and will dissapear automatically after that time, also an 'X' will be on the top right corner of the message box in case the user wants to discard it before the three seconds have passed.
+
+![Messages](documentation/messages.png)
+
+- **Modals**
+
+    - Privacy Policy and Terms & Conditions were included in modals.
+    - A standard Bootstrap 4 modal was used for Privacy Policy.
+    - A Bootstrap 4 scrolling long content modal was used for Terms & Conditions given its larger content.
+
+![Modals](documentation/modals.png)
+
+- **Back to Top Button**
+
+    - A back to top button was included across the site to improve UX. The user will be able to go back to the top of the page with the click of a button instead of manually doing so.
+    - The back to top button will show up only when the user starts to scroll down, when the user is located at the very top of the page the button will not be visible.
+
+![Back-To-Top](documentation/back-to-top.png)
+
+### Future Features
+
+- Confirmation email
+    - Create functionality to request user email confirmation to register, via an automated email.
+- Password reset
+    - Offer the user the option to reset their password in case they forget it.
+- Edit/Update and delete own comments.
+    - Offer the user the option to edit/update and delete their own comments.
 ```
 pkill uptime.sh
 rm .vscode/uptime.sh
