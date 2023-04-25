@@ -102,6 +102,10 @@ span#user {
     color: #FDF7FF;
 }
 
+.active-link {
+    text-decoration: underline !important;
+}
+
 /* CAROUSEL */
 
 .carousel-img {
