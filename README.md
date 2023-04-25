@@ -1,30 +1,32 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# VENEZUELAN FOOD COOKBOOK
 
-Welcome Leonardo Simeone,
+Venezuelan Food Cookbook, is a website designed to provide a space wherein users can create their own venezuelan food recipes, upload them and share their culinary skills with everybody. Users can also avail of the recipes already uploaded on the site. They can learn and try new dishes from a tropical country such as Venezuela, wherein, food is one of its main features. The point of this initiative is to broaden the knowledge about Venezuelan dishes. Nowadays, users can see these recipes being cooked anywhere in the world, thanks to the large exodus of Venezuelan people across the globe, the necessary ingredients can be found in several stores, some particular ones can be found in foreign-goods shops. Users can register to the site and once logged in they have access to all the site's features. Not only can they upload, update and delete their own recipes but they can also participate in conversations related to a particular recipe by writing comments and they can like or unlike recipes. This site seeks to provide a service required by users world-wide looking to expand and share culinary knowledge.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![screenshot](documentation/am-i-responsive.png)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## UX
 
-## Gitpod Reminders
+### Colour Scheme
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+* To select the colors, I used the [ColorSpace](https://mycolor.space/) website which provides the option to input any color you want and then it will provide a selection of matching/compatible colors that relate well to that "base" color you selected in the first place.
+* Once I had my base color selected which is [#0000FF](https://mycolor.space/?hex=%230000FF&sub=1), I used ColorSpace and it gave me a wide variety of compatible colors to work with from which I chose several of them and referenced them accordingly in the css style sheet.   
 
-`python3 -m http.server`
+![Colors](documentation/color-selection.png)
 
-A blue button should appear to click: _Make Public_,
+### Typography
 
-Another blue button should appear to click: _Open Browser_.
+* Since the google fonts page feature for fonts pairing suggestions was discontinued, I used an alternative tool available to select the fonts for the site.
+* I browsed [heyreliable](https://heyreliable.com/ultimate-google-font-pairings/) google fonts pairings available in their collection and selected number 13 based on the look and mood wanted for the site.
+    
+![Fonts](documentation/fonts-selection.png)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+* These fonts are clear to read, they have a friendly yet professional style which is compatible with a culinary website.
 
-A blue button should appear to click: _Make Public_,
+- [Merriweather](https://fonts.google.com/specimen/Merriweather) was used for the primary headers and titles.
 
-Another blue button should appear to click: _Open Browser_.
+- [Mulish](https://fonts.google.com/specimen/Mulish) was used for all other secondary text.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
+- [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer.
 
 1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
 2. Scroll down to the *API Key* and click *Reveal*
