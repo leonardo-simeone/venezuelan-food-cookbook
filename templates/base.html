@@ -70,11 +70,11 @@
                     {% endif %}
                     <li class="nav-item d-lg-none d-sm">
                         {% if user.is_authenticated %}
-                        <span id="user" class="nav-link">
+                        <span id="auth-user" class="nav-link">
                             Hello {{request.user}}
                         </span>
                         {% else %}
-                        <span id="user" class="nav-link">
+                        <span id="unauth-user" class="nav-link">
                             Welcome
                         </span>
                         {% endif %}
@@ -84,11 +84,11 @@
 
             <div class="d-none d-lg-block">
                 <p class="navbar-text my-auto mr-2"><i>{% if user.is_authenticated %}
-                        <span id="user" class="nav-link">
+                        <span id="auth-user-lg" class="nav-link">
                             Hello {{request.user}}
                         </span>
                         {% else %}
-                        <span id="user" class="nav-link">
+                        <span id="unauth-user-lg" class="nav-link">
                             Want to create your own recipe? --->
                         </span>
                         {% endif %}</i></p>
