@@ -9,20 +9,20 @@
     <h2> Update Recipe </h2>
     <form class="register-form" id="update-recipe" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
-      <p>
-        <label for="id_title" class="fadeIn first">{{ form.title.label }}</label>
+      <p  class="fadeIn first">
+        <label for="id_title">{{ form.title.label }}</label>
         {{ form.title }}
       </p>
-      <p>
-        <label for="id_short_description" class="fadeIn second">{{ form.short_description.label }}</label>
+      <p class="fadeIn second">
+        <label for="id_short_description">{{ form.short_description.label }}</label>
         {{ form.short_description }}
       </p>
-      <p>
-        <label for="id_ingredients" class="fadeIn third">{{ form.ingredients.label }}</label>
+      <p  class="fadeIn third">
+        <label for="id_ingredients">{{ form.ingredients.label }}</label>
         {{ form.ingredients }}
       </p>
       <div id="inst-label" class="fadeIn fourth">
-        <label for="id_instructions" class="fadeIn fourth">{{ form.instructions.label }}</label>
+        <label for="id_instructions">{{ form.instructions.label }}</label>
         {{ form.instructions }}
       </div>
       <p id="tags-p" class="fadeIn fourth">Tags:</p><br>
