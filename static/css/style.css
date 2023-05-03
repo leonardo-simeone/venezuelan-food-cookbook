@@ -152,11 +152,11 @@ span#unauth-user-lg {
     border: 1px solid rgba(30, 25, 38, .2);
 }
 
-#title-color {
+.title-color {
     color: #9B1700;
 }
 
-#title-color:hover {
+.title-color:hover {
     color: #66BAA8; /* Twisted Spot Palette color #66BAA8 of Main Color #0000FF */
 }
 
@@ -232,7 +232,7 @@ body a {
     text-decoration: underline !important;
 }
 
-#page-inact {
+.page-inact {
     color: #2E869E;
 }
 
@@ -274,25 +274,25 @@ body a {
     margin: 0 auto;
 }
 
-span#tag-button {
+.tag-button {
     pointer-events: none;
-    background-color: rgba(46, 134, 158, .6);
+    background-color: rgba(46, 134, 158, .8);
     border-color: rgba(46, 134, 158, .1);
 }
 
-#small-tag {
+.small-tag {
     background-color: rgba(155, 23, 0, .7); /* Threedom color #9B1700 in rgba of Main Color #0000FF */
     border-radius: 5px;
     padding: 0 5px;
 }
 
-#big-tag {
+.big-tag {
     background-color: #FDF7FF;
     border-radius: 5px;
     padding: 3px;
 }
 
-#comment-background {
+.comment-background {
     background-color: rgba(30, 25, 38, .1);
     border-radius: 5px;
 }
@@ -302,7 +302,7 @@ span#tag-button {
     margin-bottom: 0;
 }
 
-#comment-p2 {
+.comment-p2 {
     padding-top: 0;
 }
 
