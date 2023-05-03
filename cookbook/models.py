@@ -21,18 +21,32 @@ class Recipe(models.Model):
     with a custom string.
     """
 
-    RECIPE_TAGS = (('Breakfast', 'Breakfast'), ('Lunch', 'Lunch'), ('Dinner', 'Dinner'), ('Supper', 'Supper'), ('Dessert', 'Dessert'), ('Drink', 'Drink'),)
+    RECIPE_TAGS = (
+        ('Breakfast', 'Breakfast'), ('Lunch', 'Lunch'), ('Dinner', 'Dinner'),
+        ('Supper', 'Supper'), ('Dessert', 'Dessert'), ('Drink', 'Drink'),
+        )
 
-    creator = models.ForeignKey(User, on_delete=models.CASCADE, default=1, related_name='recipe_creator')
-    title = models.CharField(max_length=25, unique=True, null=False, blank=False)
-    short_description = models.CharField(max_length=100, null=False, blank=False)
+    creator = models.ForeignKey(
+        User, on_delete=models.CASCADE, default=1,
+        related_name='recipe_creator'
+        )
+    title = models.CharField(
+        max_length=25, unique=True, null=False, blank=False
+        )
+    short_description = models.CharField(
+        max_length=100, null=False, blank=False
+        )
     ingredients = models.TextField(null=False, blank=False)
     instructions = HTMLField(null=False, blank=False)
     food_image = CloudinaryField('image', default='default-image')
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    tags = MultiSelectField(max_length=120, choices=RECIPE_TAGS, null=True, blank=True)
-    likes = models.ManyToManyField(User, related_name='recipe_likes', blank=True)
+    tags = MultiSelectField(
+        max_length=120, choices=RECIPE_TAGS, null=True, blank=True
+        )
+    likes = models.ManyToManyField(
+        User, related_name='recipe_likes', blank=True
+        )
 
     class Meta:
         ordering = ['-created']
@@ -56,7 +70,10 @@ class Comment(models.Model):
     to represent the objects with a custom string.
     """
 
-    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, null=True, blank=True, related_name='comments')
+    recipe = models.ForeignKey(
+        Recipe, on_delete=models.CASCADE, null=True,
+        blank=True, related_name='comments'
+        )
     name = models.CharField(max_length=200)
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
