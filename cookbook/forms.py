@@ -33,7 +33,10 @@ class RecipeForm(ModelForm):
 
     class Meta:
         model = Recipe
-        fields = ['title', 'short_description', 'ingredients', 'instructions', 'tags', 'food_image']
+        fields = [
+            'title', 'short_description', 'ingredients',
+            'instructions', 'tags', 'food_image'
+            ]
 
 
 class NewUserForm(UserCreationForm):
