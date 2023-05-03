@@ -98,7 +98,19 @@ a.btn-red:hover {
     letter-spacing: 0.5px;
 }
 
-span#user {
+span#auth-user {
+    color: #FDF7FF;
+}
+
+span#unauth-user {
+    color: #FDF7FF;
+}
+
+span#auth-user-lg {
+    color: #FDF7FF;
+}
+
+span#unauth-user-lg {
     color: #FDF7FF;
 }
 
