@@ -641,10 +641,6 @@ input[type=text]:focus {
     border-bottom: 2px solid #00A6FF;
 }
 
-input[type=text]:placeholder {
-    color: #AFA8BA;
-}
-
 .tox-tinymce {
     height: 374px !important;
     width: 68vw !important;
