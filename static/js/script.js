@@ -1,3 +1,5 @@
+/* jshint esversion: 11 */
+
 let mybutton = document.getElementById("btn-back-to-top");
 
 // When the user scrolls down 20px from the top of the document, show the button
@@ -31,30 +33,3 @@ setTimeout(function () {
   alert.close();
 
 }, 3000);
-
-
-// When the update-recipe form is loaded, the fadeIn and transicion delays classes are added to the form elements
-// -------------------------------------------------------------------
-var title = document.getElementById('id_title');
-
-title.classList.add('fadeIn', 'first');
-// -------------------------------------------------------------------
-var shortDescription = document.getElementById('id_short_description');
-
-shortDescription.classList.add('fadeIn', 'second');
-// -------------------------------------------------------------------
-var ingredients = document.getElementById('id_ingredients');
-
-ingredients.classList.add('fadeIn', 'third');
-// -------------------------------------------------------------------
-var instructions = document.getElementById('id_instructions');
-
-instructions.classList.add('fadeIn', 'fourth');
-// -------------------------------------------------------------------
-var foodTags = document.getElementById('id_tags');
-
-foodTags.classList.add('fadeIn', 'fifth');
-// -------------------------------------------------------------------
-var foodImage = document.getElementById('id_food_image');
-
-foodImage.classList.add('fadeIn', 'sixth');
