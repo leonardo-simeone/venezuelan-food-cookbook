@@ -131,7 +131,7 @@
 
         {% if user.is_authenticated %}
         <div class="col-lg-5">
-            <form action="" method="POST" id="comment-form" class="register-form">
+            <form method="POST" id="comment-form" class="register-form">
                 {% csrf_token %}
                 <textarea name="body" id="form.body" class="recipe-form comment-section" rows="6"
                     placeholder="Leave your comment here"></textarea>
