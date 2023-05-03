@@ -146,7 +146,11 @@ def recipeUnit(request, pk):
     if recipe_object.likes.filter(id=request.user.id).exists():
         liked = True
 
-    context = {'recipe_object': recipe_object, 'tags': tags, 'comments': comments, 'comment_form': comment_form, 'total_likes': total_likes, 'liked': liked}
+    context = {
+        'recipe_object': recipe_object, 'tags': tags, 'comments': comments,
+        'comment_form': comment_form, 'total_likes': total_likes,
+        'liked': liked
+        }
 
     if request.method == 'POST':
         comment_form = CommentForm(request.POST)
@@ -155,7 +159,9 @@ def recipeUnit(request, pk):
             comment = comment_form.save(commit=False)
             comment.recipe = recipe_object
             comment.save()
-            messages.success(request, 'Your comment has been successfully added')
+            messages.success(
+                request, 'Your comment has been successfully added'
+                )
             return redirect(recipeUnit, pk)
     else:
         comment_form = CommentForm()
@@ -184,7 +190,9 @@ def createRecipe(request):
         if form.is_valid():
             form.instance.creator = request.user
             form.save()
-            messages.success(request, 'You have successfully created ' + form.instance.title)
+            messages.success(
+                request, 'You have successfully created ' + form.instance.title
+                )
             return redirect('recipes')
 
     context = {'form': form}
@@ -214,7 +222,9 @@ def updateRecipe(request, pk):
         form = RecipeForm(request.POST, request.FILES, instance=recipe_object)
         if form.is_valid():
             form.save()
-            messages.success(request, 'You have successfully updated ' + form.instance.title)
+            messages.success(
+                request, 'You have successfully updated ' + form.instance.title
+                )
             return redirect(recipeUnit, pk)
 
     context = {'form': form}
@@ -238,7 +248,9 @@ def deleteRecipe(request, pk):
     recipe = Recipe.objects.get(id=pk)
     if request.method == 'POST':
         recipe.delete()
-        messages.success(request, 'You have successfully deleted ' + recipe.title)
+        messages.success(
+            request, 'You have successfully deleted ' + recipe.title
+            )
         return redirect('recipes')
 
     return render(request, 'delete.html', {'recipe': recipe})
@@ -268,7 +280,7 @@ def gallery(request):
     recipe objects and gallery template is rendered
     with recipes_list as its context.
     """
-    
+
     recipes_list = Recipe.objects.all()
 
     context = {'recipes_list': recipes_list}
