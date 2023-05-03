@@ -7,7 +7,7 @@
   <div class="new-recipe" id="recipeFormContent">
     <!-- Form Title -->
     <h2> Update Recipe </h2>
-    <form class="register-form" id="update-recipe" method="POST" action="" enctype="multipart/form-data">
+    <form class="register-form" id="update-recipe" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
       <p>
         <label for="id_title" class="fadeIn first">{{ form.title.label }}</label>
