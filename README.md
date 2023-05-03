@@ -482,8 +482,46 @@ You can fork this repository by using the following steps:
 
 The only difference I found between local version and heroku deployment, was the static files. Every time that static files were changed, I had to add DISABLE_COLLECTSTATIC = 1 as a configuration variable in heroku and then deploy, once the deployment was successfull, I had to remove DISABLE_COLLECTSTATIC = 1 from the configuration variables in heroku and deploy again, only then all static files uploaded successfully and the site worked.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+## Credits
 
----
+### Content
 
-Happy coding!
+| Source | Location | Notes |
+| --- | --- | --- |
+| [Markdown Builder](https://traveltimn.github.io/markdown-builder) | README and TESTING | Tool to help generate the Markdown files |
+| [Python.plainenglish.io](https://python.plainenglish.io/how-to-implement-pagination-in-django-with-function-based-views-8f6462554930) | Home Page | 'How to implement pagination in django with function based views' |
+| [Fresh Design Web](https://codepen.io/danzawadzki/pen/EgqKRr) | All Forms | Responsive forms design, number seven in [Fresh Design Web](https://freshdesignweb.com/css-login-form-templates/), used and adapted to my needs |
+| [Fontawesome](https://fontawesome.com/search?o=r&m=free) | Social Media Links & Forms | Icons |
+| [Alvarotrigo.com](https://codepen.io/anon/embed/ZExxeRz?height=450&theme-id=dark&default-tab=only-result&user=&slug-hash=ZExxeRz&pen-title=&name=cp_embed_5#result-box) | entire site | Responsive footer design, number five in [Alvarotrigo.com](https://alvarotrigo.com/blog/website-footers/), used and adapted to my needs |
+| [Mdbootstrap.com](https://mdbootstrap.com/snippets/standard/mdbootstrap/2964350#js-tab-view) | entire site | Back to top button, used and adapted to my needs |
+| [Termsfeed.com](https://www.termsfeed.com/public/uploads/2018/09/500px-terms-use-conduct-prohibited-activities-clause-excerpt.jpg) | T&C modal | Used and adapted to my needs |
+| [Termly.io](https://termly.io/resources/templates/privacy-policy-template/) | Privacy Policy modal | Used the data listed in 'Example of a Standard Privacy Policy for a Website' to create Privacy Policy |
+| [Freefrontend.com](https://codepen.io/luclemo/pen/VGrOjv) | Gallery | Responsive gallery design, number twenty nine 'HORIZONTAL SLIDER TO GALLERY GRID' in [Freefrontend.com](https://freefrontend.com/css-gallery/), used and adapted to my needs |
+| [Stackoverflow.com](https://stackoverflow.com/questions/3222549/how-to-automatically-login-a-user-after-registration-in-django/3222558#3222558) | Register View | 'How to automatically login a user after registration in django', used and adapted to my needs |
+| [Tiny.cloud](https://www.tiny.cloud/docs/quick-start/#) | instructions field in forms | 'How to add a TinyMCE editor to a web page using the Tiny Cloud', used and adapted to my needs |
+| [Stackoverflow.com](https://stackoverflow.com/questions/39639264/django-highlight-current-page-in-navbar) | entire site | 'How to dynamically highlight current page in navbar', used and adapted to my needs |
+| [YouTube](https://www.youtube.com/playlist?list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi) | entire site | 'Tutorial on how to create a blog site with Python and Django', used several parts of the tutorial and adapted to my needs |
+
+### Media
+
+| Source | Location | Type | Notes |
+| --- | --- | --- | --- |
+| [Etsystatic](https://i.etsystatic.com/23821301/r/il/1137e7/3589659680/il_fullxfull.3589659680_lcxd.jpg) | entire site | image | favicon on all pages |
+| [Vectorstock](https://cdn5.vectorstock.com/i/1000x1000/16/79/logo-for-venezuela-vector-21441679.jpg) | entire site | image | logo image on all pages |
+| [Worldatlas](https://www.worldatlas.com/r/w768/upload/87/f8/d9/shutterstock-177064736-min.jpg) | home/recipe/gallery pages | image | default image for recipe |
+| [Elviajerofeliz](https://elviajerofeliz.com/wp-content/uploads/2020/09/comida-tipica-de-venezuela.jpg) | home/about-us pages | image | venezuelan assorted food for carousel |
+| [Blogs.es](https://i.blogs.es/ae7bdc/1366_2000-3-/1366_2000.jpg) | home/about-us pages | image | venezuelan assorted food for carousel |
+| [Eluniversal](https://mmedia.eluniversal.com/17928/gastrooo-16768.jpg) | home/about-us pages | image | venezuelan assorted food for carousel |
+| [Media.traveler.es](https://media.traveler.es/photos/6137624bf00fb1ba8d866aec/master/pass/195224.jpg) | home/recipe/gallery pages | image | image for the arepas recipe |
+| [Gastroactitud](https://www.gastroactitud.com/wp-content/uploads/2017/11/pabellon-criollo.jpg) | home/recipe/gallery pages | image | image for the pabellon-criollo recipe |
+| [Noticias24carabobo](https://noticias24carabobo.com/wp-content/uploads/2021/03/pasticho.jpg) | home/recipe/gallery pages | image | image for the plantain lasagna recipe |
+| [Paulinacocina](https://www.paulinacocina.net/wp-content/uploads/2021/10/tequen%CC%83os-con-queso-800x534.jpg) | home/recipe/gallery pages | image | image for the tequeños recipe |
+| [Recetasvenezolanas](https://www.recetasvenezolanas.org/wp-content/uploads/2019/04/carne-mechada.jpg) | home/recipe/gallery pages | image | image for the shredded beef recipe |
+| [Cloudfront](https://d1kxxrc2vqy8oa.cloudfront.net/wp-content/uploads/2019/05/27113051/RFB-1505-4-tajadasfritas.jpg) | home/recipe/gallery pages | image | image for the tajadas recipe |
+
+### Acknowledgements
+
+- I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for his fantastic support throughout the development of this project, for going the extra mile to be as approachable and understanding as humanly possible.
+- I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
+- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self doubt and imposter syndrome.
+- I would like to thank my wife Amanda, for believing in me, and supporting me unconditionally.
