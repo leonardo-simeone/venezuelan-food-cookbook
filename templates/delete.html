@@ -6,7 +6,7 @@
 {% block content %}
 <h1 id="delete-recipe">Delete {{recipe.title}}</h1>
 <div class="wrapper fadeInDown" id="delete-recipe-wrapper">
-<form action="" method="POST" id="delete-recipe-form" class="register-form" enctype="multipart/form-data">
+<form method="POST" id="delete-recipe-form" class="register-form" enctype="multipart/form-data">
     {% csrf_token %}
     <p>Are you sure you want to delete "{{recipe}}"?</p>
     <a href="{% url 'recipeunit' recipe.id %}" id="go-back"><i class="fa-solid fa-angles-left"></i> Go back</a>
