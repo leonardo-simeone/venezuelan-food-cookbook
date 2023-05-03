@@ -317,14 +317,14 @@ body a {
 .btn-primary {
     color: #9B1700;
     background-color: transparent;
-    border-color: transparent;
+    border: none;
     font-size: 1.5rem !important;
 }
 
 .btn-primary:hover {
     color: #9B1700;
     background-color: transparent !important;
-    border-color: transparent !important;
+    border: none !important;
 }
 
 .btn-danger.focus, .btn-danger:focus {
@@ -338,7 +338,7 @@ body a {
 #liked-button {
     color: #9B1700;
     background-color: transparent;
-    border-color: transparent;
+    border: none;
     font-size: 1.5rem !important;
 }
 
