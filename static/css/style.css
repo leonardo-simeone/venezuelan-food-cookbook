@@ -896,25 +896,31 @@ label p {
 
 /* EDIT DELETE BUTTONS */
 
-#edit-button button {
+#edit-button {
     background-color: #9B1700;
     border-color: rgba(30, 25, 38, .8);
+}
+
+#edit-button a {
     color: #FDF7FF;
 }
 
-#edit-button button:hover {
+#edit-button:hover {
     background-color: rgba(30, 25, 38, .4);
     border-color: rgba(30, 25, 38, .8);
     color: #1E1926;
 }
 
-#del-button button {
+#del-button {
     background-color: #9B1700;
     border-color: rgba(30, 25, 38, .8);
+}
+
+#del-button a {
     color: #FDF7FF;
 }
 
-#del-button button:hover {
+#del-button:hover {
     background-color: rgba(30, 25, 38, .4);
     border-color: rgba(30, 25, 38, .8);
     color: #1E1926;
@@ -923,7 +929,7 @@ label p {
 /* DELETE FORM */
 
 #delete-recipe-wrapper{
-    background-color: #AFA8BA;
+    background-color: #AFA8BA; /* Dust Palette color #AFA8BA of Main Color #0000FF */
 }
 
 #delete-recipe {
@@ -1183,7 +1189,7 @@ label.fifth {
         font-size: .9rem;
     }
     /* Recipe buttons */
-    #recipe-content-wrapper button {
+    #recipe-content-wrapper a {
         font-size: .8rem;
         padding: 3px;
         margin-bottom: 3px;
