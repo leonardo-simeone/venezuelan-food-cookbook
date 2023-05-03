@@ -307,6 +307,41 @@ class Comment(models.Model):
     | | body | TextField | |
     | | created | DateTimeField | |
     | | updated | DateTimeField | |
+
+## Agile Development Process
+
+### GitHub Projects
+
+[GitHub Projects](https://github.com/leonardo-simeone/venezuelan-food-cookbook/projects) served as an Agile tool for this project.
+It isn't a specialized tool, but with the right tags and project creation/issue assignments, it can be made to work.
+
+Through it, user stories, issues, and milestone tasks were planned, then tracked on a weekly basis using the basic Kanban board.
+
+![screenshot](documentation/gh-projects.png)
+
+### GitHub Issues
+
+[GitHub Issues](https://github.com/leonardo-simeone/venezuelan-food-cookbook/issues) served as an another Agile tool.
+There, I used my own **User Story Template** to manage user stories.
+
+It also helped with milestone iterations on a weekly basis.
+
+- [Open Issues](https://github.com/leonardo-simeone/venezuelan-food-cookbook/issues), no open issues remaining.
+
+![screenshot](documentation/gh-issues-open.png)
+
+- [Closed Issues](https://github.com/leonardo-simeone/venezuelan-food-cookbook/issues?q=is%3Aissue+is%3Aclosed)
+
+![screenshot](documentation/gh-issues-closed.png)
+
+### MoSCoW Prioritization
+
+I was able to apply the MoSCow prioritization and labels to my user stories within the Issues tab.
+
+- **Must Have**: guaranteed to be delivered (*max 60% of stories*)
+- **Should Have**: adds significant value, but not vital (*the rest ~20% of stories*)
+- **Could Have**: has small impact if left out (*20% of stories*)
+- **Won't Have**: not a priority for this iteration
 ```
 
 **Anything more?**
