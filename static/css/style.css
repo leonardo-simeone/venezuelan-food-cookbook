@@ -470,14 +470,7 @@ body a {
     grid-gap: 1em;
     -webkit-overflow-scrolling: touch;
     padding: 2em 1em;
-    background: #FDF7FF;
-  
-    @media all and (min-width: 600px) {
-        grid-auto-flow: initial;
-        grid-template-columns: repeat(auto-fit, minmax(auto,20em));
-        justify-content: center;
-    }
-  
+    background: #FDF7FF;  
   }
 
 .grid img {
@@ -1255,6 +1248,14 @@ label.fifth {
 }
 
 /* GALLERY */
+
+@media (min-width: 600px) {
+    .grid {
+        grid-auto-flow: initial;
+        grid-template-columns: repeat(auto-fit, minmax(auto,20em));
+        justify-content: center;
+    }
+}
 
 @media (max-width:599px) {
     .grid {
