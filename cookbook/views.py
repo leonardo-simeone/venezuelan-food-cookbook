@@ -219,6 +219,12 @@ def updateRecipe(request, pk):
     """
 
     recipe_object = Recipe.objects.get(id=pk)
+    if recipe_object.creator != request.user:
+        messages.error(
+            request, "You don't have permission to update this recipe"
+            )
+        return redirect('recipes')
+
     form = RecipeForm(instance=recipe_object)
 
     if request.method == 'POST':
@@ -250,6 +256,13 @@ def deleteRecipe(request, pk):
     """
 
     recipe = Recipe.objects.get(id=pk)
+
+    if recipe.creator != request.user:
+        messages.error(
+            request, "You don't have permission to delete this recipe"
+            )
+        return redirect('recipes')
+
     if request.method == 'POST':
         recipe.delete()
         messages.success(
