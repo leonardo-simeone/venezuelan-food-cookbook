@@ -35,4 +35,34 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 | File | Screenshot | Notes |
 | --- | --- | --- |
-| script.js | ![screenshot](documentation/js-test.png) | Pass: No Errors |
+| script.js | ![screenshot](documentation/js-test.png) | Passed no errors |
+
+### Python
+
+I have used the recommended [CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
+
+| File | CI URL | Raw URL | Combined |
+| --- | --- | --- | --- |
+| Venezuelan Food *settings.py* | `https://pep8ci.herokuapp.com/` | `https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/venezuelan_food/settings.py` | https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/venezuelan_food/settings.py# |
+| Cookbook *admin.py* | `https://pep8ci.herokuapp.com/` | `https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/admin.py` | https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/admin.py |
+| Cookbook *urls.py* | `https://pep8ci.herokuapp.com/` | `https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/urls.py` | https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/urls.py |
+| Cookbook *models.py* | `https://pep8ci.herokuapp.com/` | `https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/models.py` | https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/models.py |
+| Cookbook *forms.py* | `https://pep8ci.herokuapp.com/` | `https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/forms.py` | https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/forms.py |
+| Cookbook *views.py* | `https://pep8ci.herokuapp.com/` | `https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/views.py` | https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/views.py |
+| Cookbook *test_urls.py* | `https://pep8ci.herokuapp.com/` | `https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/test_urls.py` | https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/test_urls.py |
+| Cookbook *test_models.py* | `https://pep8ci.herokuapp.com/` | `https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/test_models.py` | https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/test_models.py |
+| Cookbook *test_forms.py* | `https://pep8ci.herokuapp.com/` | `https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/test_forms.py` | https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/test_forms.py |
+| Cookbook *test_views.py* | `https://pep8ci.herokuapp.com/` | `https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/test_views.py` | https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/test_views.py |
+
+| File | CI URL | Before Screenshot | After Screenshot | Notes |
+| --- | --- | --- | --- | --- |
+| Venezuelan Food *settings.py* | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/venezuelan_food/settings.py#) | ![screenshot](documentation/settings-errors.png) | ![screenshot](documentation/settings-pass.png) | E501 line too long errors, all fixed |
+| Cookbook *admin.py* | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/admin.py) | ![screenshot](documentation/admin-pass.png) | ![screenshot](documentation/admin-pass.png) | Passed no errors |
+| Cookbook *urls.py* | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/urls.py) | ![screenshot](documentation/urls-pass.png) | ![screenshot](documentation/urls-pass.png) | Passed no errors |
+| Cookbook *models.py* | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/models.py) | ![screenshot](documentation/models-errors.png) | ![screenshot](documentation/models-pass.png) | E501 line too long errors, all fixed |
+| Cookbook *forms.py* | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/forms.py) | ![screenshot](documentation/forms-errors.png) | ![screenshot](documentation/forms-pass.png) | E501 line too long error, fixed |
+| Cookbook *views.py* | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/views.py) | ![screenshot](documentation/views-errors.png) | ![screenshot](documentation/views-pass.png) | E501 line too long errors, W293 blank line contains whitespace error, all fixed |
+| Cookbook *test_urls.py* | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/test_urls.py) | ![screenshot](documentation/test-urls-pass.png) | ![screenshot](documentation/test-urls-pass.png) | Passed no errors |
+| Cookbook *test_models.py* | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/test_models.py) | ![screenshot](documentation/test-models-errors.png) | ![screenshot](documentation/test-models-pass.png) | E501 line too long errors, all fixed |
+| Cookbook *test_forms.py* | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/test_forms.py) | ![screenshot](documentation/test-forms-errors.png) | ![screenshot](documentation/test-forms-pass.png) | E501 line too long errors, all fixed |
+| Cookbook *test_views.py* | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/test_views.py) | ![screenshot](documentation/test-views-errors.png) | ![screenshot](documentation/test-views-pass.png) | E501 line too long errors, all fixed |
