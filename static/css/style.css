@@ -856,6 +856,10 @@ label p {
 
 /* CREATE AND UPDATE FORMS */
 
+#create-text {
+    color: #1E1926;
+}
+
 .create-recipe {
     margin-top: 15px !important;
 }
