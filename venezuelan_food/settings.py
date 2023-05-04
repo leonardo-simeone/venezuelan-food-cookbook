@@ -105,16 +105,16 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',  # noqa
     },
 ]
 
@@ -137,7 +137,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'  # noqa
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -152,15 +152,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # TinyMCE WYSIWYG - https://www.tiny.cloud/docs/plugins/opensource
 
-TINYMCE_JS_URL = "https://cdn.tiny.cloud/1/f4opj8t8stwqo9wye8a7znldjw4jkzytsafyzdtp7fh4203m/tinymce/6/tinymce.min.js"
+TINYMCE_JS_URL = "https://cdn.tiny.cloud/1/f4opj8t8stwqo9wye8a7znldjw4jkzytsafyzdtp7fh4203m/tinymce/6/tinymce.min.js"  # noqa
 TINYMCE_COMPRESSOR = False
 
 TINYMCE_DEFAULT_CONFIG = {
     "height": 360,
     "width": 900,
-    "plugins": "quickbars lists advlist autolink link preview searchreplace table paste wordcount",
-    "toolbar": "undo redo | styleselect forecolor backcolor | copy paste | bold italic underline removeformat | numlist bullist | link",
+    "plugins": "quickbars lists advlist autolink link preview searchreplace table paste wordcount",  # noqa
+    "toolbar": "undo redo | styleselect forecolor backcolor | copy paste | bold italic underline removeformat | numlist bullist | link",  # noqa
     "quickbars_insert_toolbar": "false",
     "quickbars_image_toolbar": "false",
-    "quickbars_selection_toolbar": "bold italic underline | forecolor backcolor | quicklink blockquote",
+    "quickbars_selection_toolbar": "bold italic underline | forecolor backcolor | quicklink blockquote",  # noqa
 }
