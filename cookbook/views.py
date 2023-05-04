@@ -3,6 +3,7 @@ from .models import *
 from .forms import NewUserForm, RecipeForm, CommentForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
@@ -172,6 +173,7 @@ def recipeUnit(request, pk):
 # Create new recipe view
 
 
+@login_required
 def createRecipe(request):
 
     """
@@ -202,6 +204,7 @@ def createRecipe(request):
 # Update recipe view
 
 
+@login_required
 def updateRecipe(request, pk):
 
     """
@@ -234,6 +237,7 @@ def updateRecipe(request, pk):
 # Delete recipe view
 
 
+@login_required
 def deleteRecipe(request, pk):
 
     """
