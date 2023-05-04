@@ -66,3 +66,13 @@ I have used the recommended [CI Python Linter](https://pep8ci.herokuapp.com) to 
 | Cookbook *test_models.py* | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/test_models.py) | ![screenshot](documentation/test-models-errors.png) | ![screenshot](documentation/test-models-pass.png) | E501 line too long errors, all fixed |
 | Cookbook *test_forms.py* | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/test_forms.py) | ![screenshot](documentation/test-forms-errors.png) | ![screenshot](documentation/test-forms-pass.png) | E501 line too long errors, all fixed |
 | Cookbook *test_views.py* | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/leonardo-simeone/venezuelan-food-cookbook/main/cookbook/test_views.py) | ![screenshot](documentation/test-views-errors.png) | ![screenshot](documentation/test-views-pass.png) | E501 line too long errors, all fixed |
+
+## Browser Compatibility
+
+I've tested my deployed project on multiple browsers to check for compatibility issues.
+
+| Browser | Screenshot | Notes |
+| --- | --- | --- |
+| Chrome | ![screenshot](documentation/chrome-test.png) | Works as expected |
+| Edge | ![screenshot](documentation/edge-test.png) | Works as expected |
+| Firefox | ![screenshot](documentation/firefox-test.png) | Works as expected |
