@@ -277,7 +277,7 @@ body a {
 
 .tag-button {
     pointer-events: none;
-    background-color: rgba(46, 134, 158, .8);
+    background-color: rgba(46, 134, 158, .6);
     border-color: rgba(46, 134, 158, .1);
 }
 
