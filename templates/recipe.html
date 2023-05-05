@@ -76,12 +76,12 @@
             {% if user.is_authenticated %}
             {% if liked %}
             <button type="submit" name="recipe_id" value="{{ recipe_object.id }}" id="liked-button"
-                class="btn btn-danger btn-sm">
+                class="btn btn-danger btn-sm" aria-label="Like Button">
                 <i class="fa-solid fa-heart"></i>
             </button>
 
             {% else %}
-            <button type="submit" name="recipe_id" value="{{ recipe_object.id }}" class="btn btn-primary btn-sm">
+            <button type="submit" name="recipe_id" value="{{ recipe_object.id }}" class="btn btn-primary btn-sm" aria-label="Like Button">
                 <i class="fa-regular fa-heart"></i>
             </button>
             {% endif %}
