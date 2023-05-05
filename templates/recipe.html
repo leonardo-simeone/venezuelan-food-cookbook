@@ -102,7 +102,7 @@
         <div>
             {% for tag in tags %}
             <span>
-                <button type="button" class="btn btn-info tag-button">
+                <button type="button" class="btn btn-info tag-button comment-tags-text">
                     {{tag}}
                 </button>
             </span>
@@ -135,7 +135,7 @@
                 {% csrf_token %}
                 <textarea name="body" id="form.body" class="recipe-form comment-section" rows="6"
                     placeholder="Leave your comment here"></textarea>
-                <input class="comment-section" type="submit" value="Comment">
+                <input class="comment-section comment-tags-text" type="submit" value="Comment">
             </form>
         </div>
         {% endif %}
