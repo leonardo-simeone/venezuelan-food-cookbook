@@ -25,11 +25,11 @@ function backToTop() {
   document.documentElement.scrollTop = 0;
 }
 
-// When a message shows, it will automatically disappear after three seconds
+// When a message shows, it will automatically disappear after ten seconds
 
 setTimeout(function () {
   let messages = document.getElementById("msg");
   let alert = new bootstrap.Alert(messages);
   alert.close();
 
-}, 3000);
+}, 10000);
