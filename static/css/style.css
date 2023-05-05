@@ -896,7 +896,7 @@ label p {
 
 /* MESSAGES */
 
-.alert-success {
+[class*="alert-"] {
     text-align: center;
     width: 80%;
     margin: 30px auto 0 auto;
@@ -1122,7 +1122,7 @@ label.fifth {
         padding-left: 30px;
     }
     /* Messages */
-    .alert-success {
+    [class*="alert-"] {
         font-size: .85rem;
         width: 95%;
     }
