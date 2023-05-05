@@ -91,3 +91,17 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 | XL Monitor | ![screenshot](documentation/responsive-xl.png) | Works as expected |
 | 4K Monitor | ![screenshot](documentation/responsive-4k.png) | Works as expected |
 | Samsung Galaxy A52s (my own phone) | ![screenshot](documentation/responsive-own-phone.png) | Works as expected |
+
+## Lighthouse Audit
+
+I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
+
+| Page | Size | Screenshot | Notes |
+| --- | --- | --- | --- |
+| Home | Mobile | ![screenshot](documentation/lighthouse-test-home-mobile.png) | Few warnings |
+| Home | Desktop | ![screenshot](documentation/lighthouse-test-home-desktop.png) | Some minor warnings |
+| About Us | Mobile | ![screenshot](documentation/lighthouse-test-about-us-mobile.png) | Few warnings |
+| About Us | Desktop | ![screenshot](documentation/lighthouse-test-about-us-desktop.png) | Some minor warnings |
+| Gallery | Mobile | ![screenshot](documentation/lighthouse-test-gallery-mobile.png) | Slow response time due to amount of images, few warnings |
+| Gallery | Desktop | ![screenshot](documentation/lighthouse-test-gallery-desktop.png) | Slow response time due to amount of images, some minor warnings |
+
