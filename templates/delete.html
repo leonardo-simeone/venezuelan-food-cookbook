@@ -9,8 +9,8 @@
 <form method="POST" id="delete-recipe-form" class="register-form" enctype="multipart/form-data">
     {% csrf_token %}
     <p>Are you sure you want to delete "{{recipe}}"?</p>
-    <a href="{% url 'recipeunit' recipe.id %}" id="go-back"><i class="fa-solid fa-angles-left"></i> Go back</a>
-    <input type="submit" value="Delete">
+    <a href="{% url 'recipeunit' recipe.id %}" id="go-back"><i class="fa-solid fa-angles-left"></i> Go Back</a>
+    <input type="submit" id="delete-text" value="Delete">
 </form>
 </div>
 
