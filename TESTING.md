@@ -105,3 +105,52 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Gallery | Mobile | ![screenshot](documentation/lighthouse-test-gallery-mobile.png) | Slow response time due to amount of images, few warnings |
 | Gallery | Desktop | ![screenshot](documentation/lighthouse-test-gallery-desktop.png) | Slow response time due to amount of images, some minor warnings |
 
+## Defensive Programming
+
+Defensive programming was manually tested with the below user acceptance testing:
+
+| Page | User Action | Expected Result | Pass/Fail | Comments |
+| --- | --- | --- | --- | --- |
+| Home Page | | | | |
+| | Click on Logo | Redirection to Home page | Pass | |
+| | Click on Home link in navbar | Redirection to Home page | Pass | |
+| About Us Page | | | | |
+| | Click on About Us link in navbar | Redirection to About Us page | Pass | |
+| | Click on About Us link in footer | Redirection to About Us page | Pass | |
+| Gallery Page | | | | |
+| | Click on Gallery link in navbar | Redirection to Gallery page | Pass | |
+| | Click on Gallery link in footer | Redirection to Gallery page | Pass | |
+| | Load gallery images | All images load as expected | Pass | |
+| | Click gallery images | All images links redirect user to corresponding recipe page | Pass | |
+| Create Recipe Page | | | | |
+| | Click on Create Recipe link in navbar | Redirection to Create Recipe page | Pass | |
+| | Click on Create Recipe button | New recipe will be created and user redirected to Home page | Pass | A message will show at the top of the page to indicate the user they've created the recipe successfully |
+| | Click on Create Recipe button without requiered values for recipe | An error will show on the form to indicate the user what's missing | Pass | |
+| | Brute forcing the URL to get to Create Recipe page without logging in first | User will be redirected to Login page | Pass | |
+| Update Recipe Page | | | | |
+| | Click on Edit Recipe button in Recipe page | Redirection to Update Recipe page | Pass | |
+| | Click on Edit Recipe button | Existing recipe will be updated and user redirected to the updated recipe page | Pass | A message will show at the top of the page to indicate the user they've updated the recipe successfully |
+| | Click on Edit Recipe button without requiered values for recipe | The screen will reposition and focus (css) in the field where data is missing | Pass | |
+| | Brute forcing the URL to get to Update Recipe page without logging in first | User will be redirected to Login page | Pass | |
+| | Brute forcing the URL to get to Update Recipe page of another user's recipe | An error will show at the top of the page to indicate the user that they don't have permission to update this recipe | Pass | |
+| Delete Recipe Page | | | | |
+| | Click on Delete Recipe button in Recipe page | Redirection to Delete Recipe page | Pass | Confirms deletion first |
+| | Click on Delete Recipe button | Existing recipe will be deleted and user redirected to home page | Pass | A message will show at the top of the page to indicate the user they've deleted the recipe successfully |
+| | Click on Go Back button | User is redirected to the current recipe page | Pass | |
+| | Brute forcing the URL to get to Delete Recipe page without logging in first | User will be redirected to Login page | Pass | |
+| | Brute forcing the URL to get to Delete Recipe page of another user's recipe | An error will show at the top of the page to indicate the user that they don't have permission to delete this recipe | Pass | |
+| Register | | | | |
+| | Click on Register link in navbar, carousel call to action or About Us page call to action | Redirection to Register page | Pass | |
+| | Enter valid username | Field will accept free text format | Pass | |
+| | Enter valid email address | Field will only accept email address format | Pass | |
+| | Enter valid password (twice) | Field will only accept password format | Pass | |
+| | Click on Register button | User is registered, logged in automatically and redirected Home | Pass | A message will show at the top of the page to indicate the user they've registered successfully |
+| | Click on Register button without requiered values | An error will show on the form to indicate the user what's missing | Pass | |
+| Log In | | | | |
+| | Click on the Login link in navbar | Redirection to Login page | Pass | |
+| | Enter valid email address | Field will only accept email address format | Pass | |
+| | Enter valid password | Field will only accept password format | Pass | |
+| | Click Login button | Redirects user to home page | Pass | A message will show at the top of the page to indicate the user they've logged in successfully |
+| | Click Login button with wrong data | An error will show at the top of the page to indicate the user what's wrong | Pass | |
+| Log Out | | | | |
+| | Click Logout button | Logs out user and redirects user to home page | Pass | A message will show at the top of the page to indicate the user they've logged out successfully |
