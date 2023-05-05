@@ -514,6 +514,22 @@ body a {
     border-radius: 5px;
 }
 
+#login-text {
+    color: #1E1926 !important;
+}
+
+#login-text:hover {
+    color: #FDF7FF !important;
+}
+
+#register-text {
+    color: #1E1926 !important;
+}
+
+#register-text:hover {
+    color: #FDF7FF !important;
+}
+
 /* STRUCTURE */
 
 .wrapper {    
@@ -864,8 +880,16 @@ label p {
     color: #1E1926;
 }
 
+#create-text:hover {
+    color: #FDF7FF;
+}
+
 #update-text {
     color: #1E1926;
+}
+
+#update-text:hover {
+    color: #FDF7FF;
 }
 
 .create-recipe {
