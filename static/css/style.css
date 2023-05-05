@@ -241,7 +241,7 @@ body a {
     color: #1E1926;
 }
 
-/* CONTENT */
+/* RECIPE UNIT CONTENT */
 
 #recipe-content-wrapper {
     padding: 25px;
@@ -305,6 +305,10 @@ body a {
 
 .comment-p2 {
     padding-top: 0;
+}
+
+.comment-tags-text {
+    color: #1E1926 !important;
 }
 
 /* LIKE BUTTON */
@@ -860,6 +864,10 @@ label p {
     color: #1E1926;
 }
 
+#update-text {
+    color: #1E1926;
+}
+
 .create-recipe {
     margin-top: 15px !important;
 }
@@ -950,11 +958,22 @@ label p {
 }
 
 #go-back {
-    color: #9B1700;
+    color: #FDF7FF;
     margin-right: 10px;
+    background-color: #1E1926;
+    padding: 3px;
+    border-radius: 5px;
 }
 
 #go-back:hover {
+    background-color: #9B1700;
+}
+
+#delete-text{
+    color: #1E1926;
+}
+
+#delete-text:hover {
     color: #FDF7FF;
 }
 
