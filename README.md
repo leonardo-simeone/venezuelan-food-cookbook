@@ -161,7 +161,8 @@ To wireframe the website I used [Whimsical](https://whimsical.com/wireframes).
 - **Messages**
 
     - Every time the user completes an action whether it be register, login, logout, comment on a recipe, like a recipe, create a recipe, update a recipe or delete a recipe, a relevant message will be displayed at the top of the screen to inform the user about the action being completed successfully.
-    - Messages will only stay on screen for three seconds and will dissapear automatically after that time, also an 'X' will be on the top right corner of the message box in case the user wants to discard it before the three seconds have passed.
+    - Also should the user perform an unauthorized action such as trying to force their way to a page that requires permission, or introduces the wrong username or password during login, a message will also show.
+    - Messages will only stay on screen for ten seconds and will dissapear automatically after that time, also an 'X' will be on the top right corner of the message box in case the user wants to discard it before the ten seconds have passed.
 
 ![Messages](documentation/messages.png)
 
