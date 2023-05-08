@@ -181,6 +181,13 @@ To wireframe the website I used [Whimsical](https://whimsical.com/wireframes).
 
 ![Back-To-Top](documentation/back-to-top.png)
 
+- **404/500 Custom Pages**
+
+    - The 404 and 500 custom error pages show said errors in a user friendly way.
+    - The custom pages allow the user to avail of the navbar and footer present in all the other pages, making it easier for the user to go anywhere they want in the site after getting the error.
+
+![404/500](documentation/404-500.png)
+
 ### Future Features
 
 - Confirmation email
@@ -519,6 +526,7 @@ The only difference I found between local version and heroku deployment, was the
 | [Paulinacocina](https://www.paulinacocina.net/wp-content/uploads/2021/10/tequen%CC%83os-con-queso-800x534.jpg) | home/recipe/gallery pages | image | image for the tequeños recipe |
 | [Recetasvenezolanas](https://www.recetasvenezolanas.org/wp-content/uploads/2019/04/carne-mechada.jpg) | home/recipe/gallery pages | image | image for the shredded beef recipe |
 | [Cloudfront](https://d1kxxrc2vqy8oa.cloudfront.net/wp-content/uploads/2019/05/27113051/RFB-1505-4-tajadasfritas.jpg) | home/recipe/gallery pages | image | image for the tajadas recipe |
+| [Notesfromamessykitchen](https://www.notesfromamessykitchen.com/wp-content/uploads/2013/04/img_19471.jpg) | 404/500 pages | image | image for the custom 404/500 error pages |
 
 ### Acknowledgements
 
