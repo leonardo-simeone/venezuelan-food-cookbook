@@ -21,3 +21,6 @@ urlpatterns = [
     path('', include('cookbook.urls'), name='cookbook.urls'),
     path('tinymce/', include('tinymce.urls')),
 ]
+
+handler404 = "venezuelan_food.views.handler404"
+handler500 = "venezuelan_food.views.handler500"
