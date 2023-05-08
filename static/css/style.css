@@ -1043,6 +1043,21 @@ label.fifth {
     color: #00CE9A;
 }
 
+/* 404 & 500 PAGES */
+
+#wrapper-404 {
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+#image-wrapper-404 {
+    width: 80%;
+}
+
+#image-404 {
+    border-radius: 10px;
+}
+
 /* MEDIA QUERIES */
 
 /* INDEX PAGE */
