@@ -166,3 +166,12 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Click Login button with wrong data | An error will show at the top of the page to indicate the user what's wrong | Pass | |
 | Log Out | | | | |
 | | Click Logout button | Logs out user and redirects user to home page | Pass | A message will show at the top of the page to indicate the user they've logged out successfully |
+
+## User Story Testing
+
+| User Story | Screenshot |
+| --- | --- |
+| As a site user, I would like to view a list of recipes, so that I can select one to read. | ![screenshot](documentation/home.png) |
+| As a site user, I would like to click on a recipe, so that I can read/see the full content. | ![screenshot](documentation/recipe-unit.png) |
+| As a site user/site administrator, I would like to view comments on an individual recipe, so that I can read the conversation. | ![screenshot](documentation/user-story-view-comments.png) |
+| As a site user, I would like to register an account, so that I can create my own recipes. | ![screenshot](documentation/user-story-register-create.png) |
