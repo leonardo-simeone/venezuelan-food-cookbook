@@ -104,6 +104,18 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | About Us | Desktop | ![screenshot](documentation/lighthouse-test-about-us-desktop.png) | Some minor warnings |
 | Gallery | Mobile | ![screenshot](documentation/lighthouse-test-gallery-mobile.png) | Slow response time due to amount of images, few warnings |
 | Gallery | Desktop | ![screenshot](documentation/lighthouse-test-gallery-desktop.png) | Slow response time due to amount of images, some minor warnings |
+| Recipe | Mobile | ![screenshot](documentation/lighthouse-test-recipe-mobile.png) | few warnings |
+| Recipe | Desktop | ![screenshot](documentation/lighthouse-test-recipe-desktop.png) | some minor warnings |
+| Create Recipe | Mobile | ![screenshot](documentation/lighthouse-test-create-recipe-mobile.png) | few warnings |
+| Create Recipe | Desktop | ![screenshot](documentation/lighthouse-test-create-recipe-desktop.png) | some minor warnings |
+| Update Recipe | Mobile | ![screenshot](documentation/lighthouse-test-update-recipe-mobile.png) | few warnings |
+| Update Recipe | Desktop | ![screenshot](documentation/lighthouse-test-update-recipe-desktop.png) | some minor warnings |
+| Delete Recipe | Mobile | ![screenshot](documentation/lighthouse-test-delete-recipe-mobile.png) | some minor warnings |
+| Delete Recipe | Desktop | ![screenshot](documentation/lighthouse-test-delete-recipe-desktop.png) | some minor warnings |
+| Register | Mobile | ![screenshot](documentation/lighthouse-test-register-mobile.png) | few warnings |
+| Register | Desktop | ![screenshot](documentation/lighthouse-test-register-desktop.png) | some minor warnings |
+| Login | Mobile | ![screenshot](documentation/lighthouse-test-login-mobile.png) | few warnings |
+| Login | Desktop | ![screenshot](documentation/lighthouse-test-login-desktop.png) | some minor warnings |
 
 ## Defensive Programming
 
