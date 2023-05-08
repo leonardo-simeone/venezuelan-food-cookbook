@@ -175,3 +175,12 @@ Defensive programming was manually tested with the below user acceptance testing
 | As a site user, I would like to click on a recipe, so that I can read/see the full content. | ![screenshot](documentation/recipe-unit.png) |
 | As a site user/site administrator, I would like to view comments on an individual recipe, so that I can read the conversation. | ![screenshot](documentation/user-story-view-comments.png) |
 | As a site user, I would like to register an account, so that I can create my own recipes. | ![screenshot](documentation/user-story-register-create.png) |
+| As a site user, I would like to view a paginated list of recipes, so that I can easily select which recipe to view. | ![screenshot](documentation/user-story-pagination.png) |
+| As a registered site user, I would like to  make comments on a recipe, so that I can start and/or be involved in a conversation. | ![screenshot](documentation/user-story-view-make-comments.png) |
+| As a registered site user, I would like to update and delete recipes, so that I can manage my recipes content. | ![screenshot](documentation/user-story-update-delete.png) |
+| As a registered site user, I would like to place tags on my created recipes, so that I can indicate the meal type. | ![screenshot](documentation/user-story-place-tags.png) |
+| As a registered site user, I would like to like recipes, so that I can show I liked a particular recipe. | ![screenshot](documentation/user-story-like-recipe.png) |
+| As a registered site user, I would like to avail of a website with a UX based design, so that I can navigate and interact with it easily and intuitively. | ![screenshot](documentation/recipe-unit.png) |
+| As a site administrator, I should be able to create, read, update and delete my own recipes and the ones created by registered users, so that I can moderate the content of the site. | ![screenshot](documentation/user-story-admin-create.png) |
+| As a site administrator, I should be able to create, read, update and delete my comments and the ones created by registered users, so that I can moderate the conversations. | ![screenshot](documentation/user-story-admin-comments.png) |
+| As a product owner, I would like to run automated tests, so that I can make sure everything is working as it should. | ![screenshot](documentation/user-story-automated-tests.png) |
