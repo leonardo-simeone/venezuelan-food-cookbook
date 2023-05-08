@@ -574,22 +574,10 @@ body a {
     border-radius: 0 0 10px 10px;
 }
 
-
-
-/* TABS */
-
-h2.active {
-    color: #1E1926;
-    border-bottom: 2px solid #00A6FF;
-}
-
-
-
 /* FORM TYPOGRAPHY*/
 
 input[type=button],
-input[type=submit],
-input[type=reset] {
+input[type=submit] {
     background-color: #00A6FF;
     border: none;
     color: #FDF7FF;
@@ -612,14 +600,12 @@ input[type=reset] {
 }
 
 input[type=button]:hover,
-input[type=submit]:hover,
-input[type=reset]:hover {
+input[type=submit]:hover {
     background-color: #9B1700;
 }
 
 input[type=button]:active,
-input[type=submit]:active,
-input[type=reset]:active {
+input[type=submit]:active {
     -moz-transform: scale(0.95);
     -webkit-transform: scale(0.95);
     -o-transform: scale(0.95);
@@ -672,8 +658,6 @@ input[type=text]:focus {
 .tox-notification {
     display: none !important;
 }
-
-
 
 /* ANIMATIONS */
 
@@ -817,8 +801,6 @@ input[type=text]:focus {
     width: 100%;
 }
 
-
-
 /* OTHERS */
 
 *:focus {
@@ -905,10 +887,6 @@ label p {
     text-transform: uppercase;
 } 
 
-#update-recipe p a {
-    color: #0000FF; /* Main Color #0000FF */
-}
-
 #update-recipe #id_food_image{
     width: 50vw;
 }
@@ -916,7 +894,6 @@ label p {
 #id_instructions_ifr {
     background-color: #FDF7FF;
 }
-
 
 /* MESSAGES */
 
@@ -1019,6 +996,10 @@ textarea.comment-section {
 
 input.comment-section {
     margin-bottom: 15px !important;
+}
+
+input.comment-section:hover {
+    color: #FDF7FF !important;
 }
 
 ul#id_tags {
