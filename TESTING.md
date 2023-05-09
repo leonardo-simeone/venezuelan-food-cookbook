@@ -184,3 +184,38 @@ Defensive programming was manually tested with the below user acceptance testing
 | As a site administrator, I should be able to create, read, update and delete my own recipes and the ones created by registered users, so that I can moderate the content of the site. | ![screenshot](documentation/user-story-admin-create.png) |
 | As a site administrator, I should be able to create, read, update and delete my comments and the ones created by registered users, so that I can moderate the conversations. | ![screenshot](documentation/user-story-admin-comments.png) |
 | As a product owner, I would like to run automated tests, so that I can make sure everything is working as it should. | ![screenshot](documentation/user-story-automated-tests.png) |
+
+## Automated Testing
+
+I have conducted a series of automated tests on my application.
+
+I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
+
+### Python (Unit Testing)
+
+I have used Django's built-in unit testing framework to test the application functionality.
+
+In order to run the tests, I ran the following command in the terminal each time:
+
+`python3 manage.py test cookbook `
+
+To create the coverage report, I would then run the following commands:
+
+`coverage run --source=cookbook manage.py test`
+
+`coverage report`
+
+To see the HTML version of the reports, and find out whether some pieces of code were missing, I ran the following commands:
+
+`coverage html`
+
+`python3 -m http.server`
+
+Below are the results from the various apps on my application that I've tested:
+
+| App | File | Coverage | Screenshot |
+| --- | --- | --- | --- |
+| Cookbook | test_forms.py | 100% | ![screenshot](documentation/py-test-cookbook-forms.png) |
+| Cookbook | test_models.py | 100% | ![screenshot](documentation/py-test-cookbook-models.png) |
+| Cookbook | test_urls.py | 100% | ![screenshot](documentation/py-test-cookbook-urls.png) |
+| Cookbook | test_views.py | 100% | ![screenshot](documentation/py-test-cookbook-views.png) |
