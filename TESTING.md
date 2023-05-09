@@ -232,3 +232,7 @@ Below are the results from the various apps on my application that I've tested:
 | Django | `no permission access` at venezuelan-cookbook.herokuapp.com/delete-recipe/. Logged in users without permission to delete another user's recipe could force access this page, intended only for recipe's owner | ![screenshot](documentation/delete-recipe-permission-fail.png) | ![screenshot](documentation/delete-recipe-permission-success.png) | I used a conditional in the deleteRecipe view to check if the logged in user was in fact the recipe owner, if they don't match, then an error indicating to the user that they don't have permission to delete the recipe will be shown and the user will be redirected to home page. |
 | Python | `bash: coverage: command not found` Coverage not installed. Tried to run unit tests using coverage but coverage hadn't been installed yet. | ![screenshot](documentation/coverage-error.png) | ![screenshot](documentation/coverage-error-fixed.png) | I installed coverage using `pip3 install coverage`. |
 | Python | `E501 line too long` (87 > 79 characters). | ![screenshot](documentation/test-forms-errors.png) | ![screenshot](documentation/test-forms-pass.png) | This error replicated along all my python files. To fix it, I followed my mentor's suggestion which was to press enter right after the first bracket so I dind't have to 'guess' where the proper indentantion was. |
+
+## Unfixed Bugs
+
+There are no remaining bugs that I am aware of.
