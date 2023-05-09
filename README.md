@@ -320,7 +320,7 @@ class Comment(models.Model):
 
 ### GitHub Projects
 
-[GitHub Projects](https://github.com/leonardo-simeone/venezuelan-food-cookbook/projects) served as an Agile tool for this project.
+[GitHub Projects](https://github.com/leonardo-simeone/venezuelan-food-cookbook/projects?query=is%3Aclosed) served as an Agile tool for this project.
 It isn't a specialized tool, but with the right tags and project creation/issue assignments, it can be made to work.
 
 Through it, user stories, issues, and milestone tasks were planned, then tracked on a weekly basis using the basic Kanban board.
