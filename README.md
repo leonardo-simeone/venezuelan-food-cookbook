@@ -316,6 +316,37 @@ class Comment(models.Model):
     | | created | DateTimeField | |
     | | updated | DateTimeField | |
 
+### Graphviz ERD
+
+I used `graphviz` and `django-extensions` to auto-generate the full Django ERD.
+
+Steps taken were:
+
+1. `sudo apt update`
+2. `sudo apt-get install python3-dev graphviz libgraphviz-dev pkg-config`
+3. Type `Y` to confirm.
+4. `pip3 install django-extensions pygraphviz`
+
+Then in my [settings.py](venezuelan_food/settings.py) file, within the `INSTALLED_APPS` variable, I included `django_extensions`:
+
+```python
+INSTALLED_APPS = [
+    ...
+    'django_extensions',
+    ...
+]
+```
+
+Finally, I ran the `graph_models` command in the CLI: `python3 manage.py graph_models -a -o erd-django.png`
+
+This created my [erd-django.png](documentation/erd-django.png) entity relationship diagram below.
+
+![erd-django](documentation/erd-django.png)
+
+\* source: [medium.com](https://medium.com/@yathomasi1/1-using-django-extensions-to-visualize-the-database-diagram-in-django-application-c5fa7e710e16)
+
+**Note**: I do not plan to keep `django-extensions` or `pygraphviz` on this project, so I've removed from the INSTALLED_APPS and uninstalled them using: `pip3 uninstall django-extensions pygraphviz -y`.
+
 ## Agile Development Process
 
 ### GitHub Projects
