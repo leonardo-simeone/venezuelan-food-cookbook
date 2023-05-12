@@ -83,26 +83,17 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
 
-| Page | Size | Screenshot | Notes |
+| Page | Mobile | Desktop | Notes |
 | --- | --- | --- | --- |
-| Home | Mobile | ![screenshot](documentation/lighthouse-test-home-mobile.png) | Few warnings |
-| Home | Desktop | ![screenshot](documentation/lighthouse-test-home-desktop.png) | Some minor warnings |
-| About Us | Mobile | ![screenshot](documentation/lighthouse-test-about-us-mobile.png) | Few warnings |
-| About Us | Desktop | ![screenshot](documentation/lighthouse-test-about-us-desktop.png) | Some minor warnings |
-| Gallery | Mobile | ![screenshot](documentation/lighthouse-test-gallery-mobile.png) | Slow response time due to amount of images, few warnings |
-| Gallery | Desktop | ![screenshot](documentation/lighthouse-test-gallery-desktop.png) | Slow response time due to amount of images, some minor warnings |
-| Recipe | Mobile | ![screenshot](documentation/lighthouse-test-recipe-mobile.png) | few warnings |
-| Recipe | Desktop | ![screenshot](documentation/lighthouse-test-recipe-desktop.png) | some minor warnings |
-| Create Recipe | Mobile | ![screenshot](documentation/lighthouse-test-create-recipe-mobile.png) | few warnings |
-| Create Recipe | Desktop | ![screenshot](documentation/lighthouse-test-create-recipe-desktop.png) | some minor warnings |
-| Update Recipe | Mobile | ![screenshot](documentation/lighthouse-test-update-recipe-mobile.png) | few warnings |
-| Update Recipe | Desktop | ![screenshot](documentation/lighthouse-test-update-recipe-desktop.png) | some minor warnings |
-| Delete Recipe | Mobile | ![screenshot](documentation/lighthouse-test-delete-recipe-mobile.png) | some minor warnings |
-| Delete Recipe | Desktop | ![screenshot](documentation/lighthouse-test-delete-recipe-desktop.png) | some minor warnings |
-| Register | Mobile | ![screenshot](documentation/lighthouse-test-register-mobile.png) | few warnings |
-| Register | Desktop | ![screenshot](documentation/lighthouse-test-register-desktop.png) | some minor warnings |
-| Login | Mobile | ![screenshot](documentation/lighthouse-test-login-mobile.png) | few warnings |
-| Login | Desktop | ![screenshot](documentation/lighthouse-test-login-desktop.png) | some minor warnings |
+| Home | ![screenshot](documentation/lighthouse-test-home-mobile.png) | ![screenshot](documentation/lighthouse-test-home-desktop.png) | Few warnings on mobile |
+| About Us | ![screenshot](documentation/lighthouse-test-about-us-mobile.png) | ![screenshot](documentation/lighthouse-test-about-us-desktop.png) | Few warnings on mobile |
+| Gallery | ![screenshot](documentation/lighthouse-test-gallery-mobile.png) | ![screenshot](documentation/lighthouse-test-gallery-desktop.png) | Slow response time due to amount of images, few warnings |
+| Recipe | ![screenshot](documentation/lighthouse-test-recipe-mobile.png) | ![screenshot](documentation/lighthouse-test-recipe-desktop.png) | few warnings on mobile |
+| Create Recipe | ![screenshot](documentation/lighthouse-test-create-recipe-mobile.png) | ![screenshot](documentation/lighthouse-test-create-recipe-desktop.png) | few warnings on mobile |
+| Update Recipe | ![screenshot](documentation/lighthouse-test-update-recipe-mobile.png) | ![screenshot](documentation/lighthouse-test-update-recipe-desktop.png) | few warnings on mobile |
+| Delete Recipe | ![screenshot](documentation/lighthouse-test-delete-recipe-mobile.png) | ![screenshot](documentation/lighthouse-test-delete-recipe-desktop.png) | some minor warnings on mobile |
+| Register | ![screenshot](documentation/lighthouse-test-register-mobile.png) | ![screenshot](documentation/lighthouse-test-register-desktop.png) | few warnings on mobile |
+| Login | ![screenshot](documentation/lighthouse-test-login-mobile.png) | ![screenshot](documentation/lighthouse-test-login-desktop.png) | few warnings on mobile |
 
 ## Defensive Programming
 
