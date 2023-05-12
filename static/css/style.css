@@ -68,6 +68,15 @@ h1 {
     text-shadow: 0 0 #1E1926;
 }
 
+#contact-heading {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 10px;
+}
+
 /* LINKS */
 
 a {
@@ -542,6 +551,17 @@ body a {
     width: 100%;
     min-height: 75vh;
     padding: 20px;
+}
+
+.contact-wrapper {    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 60px;
 }
 
 .wrapper h2 {
