@@ -1,4 +1,4 @@
-from django.test import TestCase, Client
+from django.test import TestCase, Client, RequestFactory
 from django.urls import reverse
 from unittest.mock import patch
 from django.contrib.auth.models import User
@@ -661,3 +661,80 @@ class TestLikeRecipe(TestCase):
         # Tests that the recipe was unliked
         self.recipe.refresh_from_db()
         self.assertFalse(self.recipe.likes.filter(id=self.user.id).exists())
+
+
+class TestContact(TestCase):
+
+    """
+    We define a setUp method to create the necessary data to run tests.
+    The TestContact class has three test methods:
+    - test_contact_form_view_GET() method tests that the view returns
+    a 200 status code, uses the correct template, and creates an instance
+    of the ContactForm form.
+    - test_contact_form_view_POST_success() method tests that the view
+    successfully submits a valid form, we get the response status code 302,
+    and redirects the user to the recipes page.
+    - test_contact_form_view_POST_error() method tests that the view
+    correctly handles an invalid form submission with an error message,
+    we get the response status code 200 and the form is not submitted.
+    """
+
+    # Create the necessary data to run tests.
+    def setUp(self):
+        self.client = Client()
+        self.factory = RequestFactory()
+        self.contact_url = reverse('contact')
+
+    # Tests that the view returns
+    # a 200 status code, uses the correct template, and creates an instance
+    # of the ContactForm form.
+    def test_contact_form_view_GET(self):
+        response = self.client.get(self.contact_url)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'contact.html')
+        self.assertTrue(isinstance(response.context['form'], ContactForm))
+
+    # Tests that the view successfully submits a valid form,
+    # we get the response status code 302, and redirects
+    # the user to the recipes page.
+    def test_contact_form_view_POST_success(self):
+
+        url = reverse('contact')
+
+        data = {
+            'name': 'John Smith',
+            'email': 'john@example.com',
+            'body': 'Hello, this is a test message.'
+        }
+
+        with patch('django.contrib.messages.success') as mock_message:
+            response = self.client.post(url, data=data)
+
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(
+            response.url, reverse('recipes')
+            )
+        self.assertTrue(mock_message.called)
+
+    # Tests that the view correctly handles an invalid form
+    # submission with an error message, we get the response status
+    # code 200 and the form is not submitted.
+    def test_contact_form_view_POST_error(self):
+
+        url = reverse('contact')
+
+        data = {
+            'name': 'John Smith',
+            'email': 'john@example.com',
+            'body': ''
+        }
+
+        with patch('django.contrib.messages.success') as mock_message:
+            response = self.client.post(url, data=data)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertFormError(
+            response, 'form', 'body',
+            'This field is required.'
+            )
+        self.assertFalse(mock_message.called)

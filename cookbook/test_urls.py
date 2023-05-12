@@ -6,7 +6,7 @@ from . import views
 class TestUrls(TestCase):
 
     """
-    The TestUrls class has eleven test methods.
+    The TestUrls class has twelve test methods.
     For each URL, we use reverse function to get the URL pattern
     for the named URL, and then use resolve to get the function
     that will handle the request for that URL pattern.
@@ -59,3 +59,7 @@ class TestUrls(TestCase):
     def test_like_recipe_url_resolves(self):
         url = reverse('like-recipe', args=['1'])
         self.assertEqual(resolve(url).func, views.likeRecipe)
+
+    def test_contact_url_resolves(self):
+        url = reverse('contact')
+        self.assertEqual(resolve(url).func, views.contact)

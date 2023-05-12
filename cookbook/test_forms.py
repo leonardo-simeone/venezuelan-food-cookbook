@@ -4,7 +4,7 @@ from django.forms.fields import MultipleChoiceField
 from django.forms.widgets import CheckboxSelectMultiple
 from django.contrib.auth.models import User
 from .models import Recipe, Comment
-from .forms import RecipeForm, NewUserForm, CommentForm
+from .forms import *
 
 
 class TestRecipeForm(TestCase):
@@ -74,3 +74,17 @@ class TestCommentForm(TestCase):
         form = CommentForm()
         self.assertEqual(form.Meta.model, Comment)
         self.assertEqual(form.Meta.fields, ['body'])
+
+
+class TestContactForm(TestCase):
+
+    """
+    The TestContactForm class has only one test method,
+    which tests that the Meta attributes are set as expected.
+    """
+
+    # Tests that the meta model has the attributes set as expected.
+    def test_meta_model(self):
+        form = ContactForm()
+        self.assertEqual(form.Meta.model, Contact)
+        self.assertEqual(form.Meta.fields, ['name', 'email', 'body'])

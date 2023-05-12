@@ -127,3 +127,54 @@ class TestCommentModel(TestCase):
         self.assertEqual(comments.count(), 2)
         self.assertEqual(comments[0], comment1)
         self.assertEqual(comments[1], comment2)
+
+
+class TestContactModel(TestCase):
+
+    """
+    The TestContactModel class has four test methods:
+    The setUp method is used to set up the test data.
+    - test_contact_creation tests that the contact object
+    is created and that its string representation is correct.
+    - test_name_max_length, test_email_field and test_body_field
+    methods test the fields' properties, such as
+    their maximum length, nullability, and data types.
+    The tearDown() method, is used to delete the test contact object
+    """
+
+    # Creates the necessary contact object to run tests.
+    def setUp(self):
+        self.contact = Contact.objects.create(
+            name='John Smith',
+            email='john@example.com',
+            body='Hello, this is a test message.'
+        )
+
+    # Tests that the contact object is created and that
+    # its string representation is correct.
+    def test_contact_creation(self):
+        self.assertTrue(isinstance(self.contact, Contact))
+        self.assertEqual(self.contact.__str__(), self.contact.name)
+
+    # Test the fields' properties, such as
+    # their maximum length, nullability, and data types.
+    def test_name_max_length(self):
+        max_length = self.contact._meta.get_field('name').max_length
+        self.assertEquals(max_length, 50)
+
+    def test_email_field(self):
+        email_field = self.contact._meta.get_field('email')
+        self.assertEquals(email_field.max_length, 254)
+        self.assertFalse(email_field.blank)
+        self.assertFalse(email_field.null)
+        self.assertTrue(isinstance(email_field, models.EmailField))
+
+    def test_body_field(self):
+        body_field = self.contact._meta.get_field('body')
+        self.assertEquals(body_field.max_length, None)
+        self.assertFalse(body_field.blank)
+        self.assertFalse(body_field.null)
+        self.assertTrue(isinstance(body_field, models.TextField))
+
+    def tearDown(self):
+        self.contact.delete()
