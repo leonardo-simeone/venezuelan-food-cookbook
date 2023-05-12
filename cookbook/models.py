@@ -84,3 +84,18 @@ class Comment(models.Model):
 
     def __str__(self):
         return 'Comment made by ' + self.name + ' on ' + self.recipe.title
+
+
+class Contact(models.Model):
+
+    """
+    The Contact class inherits from django.db models, it contains
+    the information pertaining to contact objects attributes.
+    """
+
+    name = models.CharField(max_length=50, null=False, blank=False)
+    email = models.EmailField(null=False, blank=False)
+    body = models.TextField(null=False, blank=False)
+
+    def __str__(self):
+        return self.name
