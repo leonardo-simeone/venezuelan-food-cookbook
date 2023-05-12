@@ -78,4 +78,4 @@ class ContactForm(ModelForm):
 
     class Meta:
         model = Contact
-        fields = ('name', 'email', 'body')
+        fields = ['name', 'email', 'body']
