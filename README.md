@@ -412,7 +412,41 @@ It isn't a specialized tool, but with the right tags and project creation/issue 
 
 Through it, user stories, issues, and milestone tasks were planned, then tracked on a weekly basis using the basic Kanban board.
 
+#### Project Iteration 1 board
+
+The [Project Iteration 1 board](https://github.com/users/leonardo-simeone/projects/10) was the first board I created to coordinate, track and update Iteration 1.
+
 ![screenshot](documentation/gh-projects.png)
+
+#### Project Iteration 2 board
+
+The [Project Iteration 2 board](https://github.com/users/leonardo-simeone/projects/13) was the second board I created to coordinate, track and update Iteration 2.
+
+![screenshot](documentation/iteration2-board.png)
+
+#### Project Iteration 3 board
+
+The [Project Iteration 3 board](https://github.com/users/leonardo-simeone/projects/14) was the third board I created to coordinate, track and update Iteration 3.
+
+![screenshot](documentation/iteration3-board.png)
+
+#### Project Iteration 4 board
+
+The [Project Iteration 4 board](https://github.com/users/leonardo-simeone/projects/15) was the fourth board I created to coordinate, track and update Iteration 4.
+
+![screenshot](documentation/iteration4-board.png)
+
+#### Project Iteration 5 board
+
+The [Project Iteration 5 board](https://github.com/users/leonardo-simeone/projects/16) was the fifth board I created to coordinate, track and update Iteration 5.
+
+![screenshot](documentation/iteration5-board.png)
+
+#### Project Iteration 6 board
+
+The [Project Iteration 6 board](https://github.com/users/leonardo-simeone/projects/17/views/1) was the sixth and last board I created to coordinate, track and update Iteration 6.
+
+![screenshot](documentation/iteration6-board.png)
 
 ### GitHub Issues
 
