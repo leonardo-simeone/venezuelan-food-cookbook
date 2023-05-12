@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Recipe, Comment
+from .models import Recipe, Comment, Contact
 from tinymce.widgets import TinyMCE
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -65,3 +65,17 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ['body']
+
+
+class ContactForm(ModelForm):
+
+    """
+    The ContactForm class inherits from
+    django.forms ModelForm, it contains
+    a meta class to set the model and fields
+    to use in the form.
+    """
+
+    class Meta:
+        model = Contact
+        fields = ('name', 'email', 'body')
