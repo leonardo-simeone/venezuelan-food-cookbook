@@ -3,5 +3,11 @@ from .models import *
 from tinymce.widgets import TinyMCE
 
 
-admin.site.register(Recipe)
-admin.site.register(Comment)
+@admin.register(Recipe)
+class RecipeAdmin(admin.ModelAdmin):
+    list_display = ('title', 'creator', 'short_description', 'tags')
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('name', 'body', 'recipe')
