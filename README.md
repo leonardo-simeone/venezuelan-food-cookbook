@@ -46,6 +46,7 @@ This site seeks to provide a service required by users world-wide looking to exp
 - As a site user, I would like to view a paginated list of recipes, so that I can easily select which recipe to view, [Link here](https://github.com/leonardo-simeone/venezuelan-food-cookbook/issues/10).
 - As a site user, I would like to avail of a website with a UX based design, so that I can navigate and interact with it easily and intuitively, [Link here](https://github.com/leonardo-simeone/venezuelan-food-cookbook/issues/12).
 - As a registered site user, I would like to like recipes, so that I can show I liked a particular recipe, [Link here](https://github.com/leonardo-simeone/venezuelan-food-cookbook/issues/13).
+- As a site user, I would like to contact the site administrator, so that I can query/recommend the site admin on different topics, [Link here](https://github.com/leonardo-simeone/venezuelan-food-cookbook/issues/14).
 
 ### Site Admin
 
@@ -150,6 +151,13 @@ To wireframe the website I used [Whimsical](https://whimsical.com/wireframes).
 
 ![Delete Recipe](documentation/delete-recipe.png)
 
+- **Contact**
+
+    - The contact page contains the form necessary to allow the user to contact the site owner/administrator. The purpose of this feature is for the user to have a way to communicate queries/suggestions/feedback to the site owner/administrator.
+    - The user must provide a name, an email and a message in the form.
+
+![Contact](documentation/contact.png)
+
 - **Footer**
 
     - The footer the same as the navbar, is identical across the site.
@@ -225,6 +233,13 @@ Entity Relationship Diagrams (ERD) help to visualize database architecture befor
 Understanding the relationships between different tables can save time later in the project.
 
 ```python
+from django.db import models
+from django.contrib.auth.models import User
+from tinymce.models import HTMLField
+from cloudinary.models import CloudinaryField
+from multiselectfield import MultiSelectField
+
+
 class Recipe(models.Model):
 
     """
@@ -241,18 +256,32 @@ class Recipe(models.Model):
     with a custom string.
     """
 
-    RECIPE_TAGS = (('Breakfast', 'Breakfast'), ('Lunch', 'Lunch'), ('Dinner', 'Dinner'), ('Supper', 'Supper'), ('Dessert', 'Dessert'), ('Drink', 'Drink'),)
+    RECIPE_TAGS = (
+        ('Breakfast', 'Breakfast'), ('Lunch', 'Lunch'), ('Dinner', 'Dinner'),
+        ('Supper', 'Supper'), ('Dessert', 'Dessert'), ('Drink', 'Drink'),
+        )
 
-    creator = models.ForeignKey(User, on_delete=models.CASCADE, default=1, related_name='recipe_creator')
-    title = models.CharField(max_length=25, unique=True, null=False, blank=False)
-    short_description = models.CharField(max_length=100, null=False, blank=False)
+    creator = models.ForeignKey(
+        User, on_delete=models.CASCADE, default=1,
+        related_name='recipe_creator'
+        )
+    title = models.CharField(
+        max_length=25, unique=True, null=False, blank=False
+        )
+    short_description = models.CharField(
+        max_length=100, null=False, blank=False
+        )
     ingredients = models.TextField(null=False, blank=False)
     instructions = HTMLField(null=False, blank=False)
     food_image = CloudinaryField('image', default='default-image')
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    tags = MultiSelectField(max_length=120, choices=RECIPE_TAGS, null=True, blank=True)
-    likes = models.ManyToManyField(User, related_name='recipe_likes', blank=True)
+    tags = MultiSelectField(
+        max_length=120, choices=RECIPE_TAGS, null=True, blank=True
+        )
+    likes = models.ManyToManyField(
+        User, related_name='recipe_likes', blank=True
+        )
 
     class Meta:
         ordering = ['-created']
@@ -276,7 +305,10 @@ class Comment(models.Model):
     to represent the objects with a custom string.
     """
 
-    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, null=True, blank=True, related_name='comments')
+    recipe = models.ForeignKey(
+        Recipe, on_delete=models.CASCADE, null=True,
+        blank=True, related_name='comments'
+        )
     name = models.CharField(max_length=200)
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
@@ -287,6 +319,22 @@ class Comment(models.Model):
 
     def __str__(self):
         return 'Comment made by ' + self.name + ' on ' + self.recipe.title
+
+
+class Contact(models.Model):
+
+    """
+    The Contact class inherits from django.db models, it contains
+    the information pertaining to contact objects attributes.
+    """
+
+    name = models.CharField(max_length=50, null=False, blank=False)
+    email = models.EmailField(null=False, blank=False)
+    body = models.TextField(null=False, blank=False)
+
+    def __str__(self):
+        return self.name
+
 ```
 
 ![screenshot](documentation/erd.png)
@@ -304,7 +352,7 @@ class Comment(models.Model):
     | | created | DateTimeField | |
     | | updated | DateTimeField | |
     | | tags | MultiSelectField | |
-    | | likes | ManyToManyField | M2M to **User** model |
+    | **M2M** | likes | ManyToManyField | M2M to **User** model |
 
 - Table: **Comment**
 
@@ -315,6 +363,14 @@ class Comment(models.Model):
     | | body | TextField | |
     | | created | DateTimeField | |
     | | updated | DateTimeField | |
+
+- Table: **Contact**
+
+    | **PK** | **id** (unique) | Type | Notes |
+    | --- | --- | --- | --- |
+    | | name | CharField | |
+    | | email | EmailField | |
+    | | body | TextField | |
 
 ### Graphviz ERD
 
