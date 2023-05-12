@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
-from .forms import NewUserForm, RecipeForm, CommentForm
+from .forms import NewUserForm, RecipeForm, CommentForm, ContactForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -337,3 +337,24 @@ def likeRecipe(request, pk):
         messages.success(request, 'You have LIKED ' + recipe_object.title)
 
     return redirect(recipeUnit, pk)
+
+# --------------------------------------------------------------------------
+# Contact view
+
+
+def contact(request):
+    """A view for users to contact the site admin"""
+    form = ContactForm(request.POST or None)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            messages.success(
+                request, 'Thanks for contacting Venezuelan Cookbook!'
+                )
+            return redirect('recipes')
+        messages.error(request, 'An error has occurred. Please try again.')
+    template = 'contact.html'
+    context = {
+        'form': form,
+    }
+    return render(request, template, context)
