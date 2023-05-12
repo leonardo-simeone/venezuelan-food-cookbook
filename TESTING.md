@@ -167,7 +167,9 @@ Defensive programming was manually tested with the below user acceptance testing
 
 I have conducted a series of automated tests on my application.
 
-I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
+This includes a series of testing across several files in my [cookbook](cookbook/) app, consisting of a total of 42 unique tests.
+
+![screenshot](documentation/user-story-automated-tests.png)
 
 ### Python (Unit Testing)
 
