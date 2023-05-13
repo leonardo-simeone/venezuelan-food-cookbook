@@ -22,6 +22,7 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 | Create Recipe | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvenezuelan-cookbook.herokuapp.com%2Fcreate-recipe%2F) | ![screenshot](documentation/html-test-create-recipe-bugs.png) | ![screenshot](documentation/html-test-create-recipe-fixed.png) | Element p not allowed as a child of element label error, fixed |
 | Update Recipe | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvenezuelan-cookbook.herokuapp.com%2Fupdate-recipe%2F16%2F) | ![screenshot](documentation/html-test-update-recipe-bugs.png) | ![screenshot](documentation/html-test-update-recipe-fixed.png) | Stray end tags form and divs errors, all fixed |
 | Delete Recipe | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvenezuelan-cookbook.herokuapp.com%2Fdelete-recipe%2F16%2F) | ![screenshot](documentation/html-test-delete-recipe.png) | ![screenshot](documentation/html-test-delete-recipe.png) | Passed no errors |
+| Contact | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvenezuelan-cookbook.herokuapp.com%2Fcontact%2F) | ![screenshot](documentation/html-test-contact.png) | ![screenshot](documentation/html-test-contact.png) | Passed no errors |
 
 ### CSS
 
@@ -94,6 +95,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Delete Recipe | ![screenshot](documentation/lighthouse-test-delete-recipe-mobile.png) | ![screenshot](documentation/lighthouse-test-delete-recipe-desktop.png) | some minor warnings on mobile |
 | Register | ![screenshot](documentation/lighthouse-test-register-mobile.png) | ![screenshot](documentation/lighthouse-test-register-desktop.png) | few warnings on mobile |
 | Login | ![screenshot](documentation/lighthouse-test-login-mobile.png) | ![screenshot](documentation/lighthouse-test-login-desktop.png) | few warnings on mobile |
+| Contact | ![screenshot](documentation/lighthouse-test-contact-mobile.png) | ![screenshot](documentation/lighthouse-test-contact-desktop.png) | few warnings on mobile |
 
 ## Defensive Programming
 
@@ -129,6 +131,10 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Click on Go Back button | User is redirected to the current recipe page | Pass | |
 | | Brute forcing the URL to get to Delete Recipe page without logging in first | User will be redirected to Login page | Pass | |
 | | Brute forcing the URL to get to Delete Recipe page of another user's recipe | An error will show at the top of the page to indicate the user that they don't have permission to delete this recipe | Pass | |
+| Contact Page | | | | |
+| | Click on Contact link in navbar | Redirection to Contact page | Pass | |
+| | Click on Send button | New contact message will be created and user redirected to Home page | Pass | A message will show at the top of the page to indicate the user they've contacted the site administrator successfully |
+| | Click on Send button without requiered values for contact form | An error will show on the form to indicate the user what's missing | Pass | |
 | Register | | | | |
 | | Click on Register link in navbar, carousel call to action or About Us page call to action | Redirection to Register page | Pass | |
 | | Enter valid username | Field will accept free text format | Pass | |
@@ -154,6 +160,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | As a site user/site administrator, I would like to view comments on an individual recipe, so that I can read the conversation. | ![screenshot](documentation/user-story-view-comments.png) |
 | As a site user, I would like to register an account, so that I can create my own recipes. | ![screenshot](documentation/user-story-register-create.png) |
 | As a site user, I would like to view a paginated list of recipes, so that I can easily select which recipe to view. | ![screenshot](documentation/user-story-pagination.png) |
+| As a site user, I would like to contact the site administrator, so that I can query/recommend the site admin on different topics. | ![screenshot](documentation/contact.png) |
 | As a registered site user, I would like to  make comments on a recipe, so that I can start and/or be involved in a conversation. | ![screenshot](documentation/user-story-view-make-comments.png) |
 | As a registered site user, I would like to update and delete recipes, so that I can manage my recipes content. | ![screenshot](documentation/user-story-update-delete.png) |
 | As a registered site user, I would like to place tags on my created recipes, so that I can indicate the meal type. | ![screenshot](documentation/user-story-place-tags.png) |
@@ -167,7 +174,7 @@ Defensive programming was manually tested with the below user acceptance testing
 
 I have conducted a series of automated tests on my application.
 
-This includes a series of testing across several files in my [cookbook](cookbook/) app, consisting of a total of 42 unique tests.
+This includes a series of testing across several files in my [cookbook](cookbook/) app, consisting of a total of 51 unique tests.
 
 ![screenshot](documentation/user-story-automated-tests.png)
 
